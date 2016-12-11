@@ -2,6 +2,7 @@ Livery credits:
 
 
 UAX, Lufthansa CityLine: ?
-Both Deltas, Continental Express, Adria Airways: JcHnd
+Both Deltas, Continental Express, Star Alliance Adria Airways: JcHnd/Julio Coello
 US Airways Express, United Express "Battleship": Nick I
-SAS: D-ECHO
+Adria Airways(normal): Dani Rodriguez
+SAS, Air Canada Jazz, Iberio Regional AirNostrum (was by Jose Miguel, redone), Lufthansa CityLine (was by unknown, redone) : D-ECHO

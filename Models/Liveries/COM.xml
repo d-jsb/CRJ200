@@ -8,9 +8,6 @@
         <name type="string">Delta Express by Comair (Old)</name>
         <texture>Liveries/COM.png</texture>
       </livery>
-      <lights>
-        <texture>Liveries/COM-lights.png</texture>
-      </lights>
     </model>
   </sim>
 

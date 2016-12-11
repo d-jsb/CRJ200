@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+	<name>Effects/highreflect</name>
+	<inherits-from>/Effects/model-combined-deferred</inherits-from>
+	<parameters>
+		<!-- Light map -->
+		<lightmap-enabled type="int">0</lightmap-enabled>
+		<!-- Reflection -->
+		<reflection-enabled type="int">1</reflection-enabled>
+		<reflection-correction type="float">0.2</reflection-correction>
+		<reflection-dynamic type="int">1</reflection-dynamic>
+	</parameters>
+</PropertyList>

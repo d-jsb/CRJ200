@@ -466,6 +466,7 @@
 			<target-roll-deg>0</target-roll-deg>
 			<target-pitch-deg>0</target-pitch-deg>
 			<target-climb-rate-fpm>0</target-climb-rate-fpm>
+                        <roll-mode>0</roll-mode>
 		</internal>
 	</autopilot>
 	

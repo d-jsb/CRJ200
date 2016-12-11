@@ -8,9 +8,6 @@
         <name type="string">Lufthansa CityLine</name>
         <texture>Liveries/CLH.png</texture>
       </livery>
-      <lights>
-        <texture>Liveries/CLH-lights.png</texture>
-      </lights>
     </model>
   </sim>
 

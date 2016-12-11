@@ -6,11 +6,8 @@
     <model>
       <livery>
         <name type="string">Delta Express by ASA (New)</name>
-        <texture>Liveries/ASQ.png</texture>
+        <texture>ASQ.png</texture>
       </livery>
-      <lights>
-        <texture>Liveries/ASQ-lights.png</texture>
-      </lights>
     </model>
   </sim>
 

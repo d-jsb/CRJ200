@@ -193,6 +193,187 @@
 		</center>
 	</animation>
 
+    <!-- Hydraulic switches -->
+	<animation>
+		<type>pick</type>
+		<object-name>Hydraulic1Switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/hydraulic/system[0]/pump-b</property>
+				<wrap>0</wrap>
+				<value type="int">1</value>
+				<value type="int">0</value>
+				<value type="int">2</value>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/hydraulic/system[0]/pump-b</property>
+				<offset>-1</offset>
+				<wrap>0</wrap>
+				<value type="int">1</value>
+				<value type="int">0</value>
+				<value type="int">2</value>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Hydraulic1Switch</object-name>
+		<property>controls/hydraulic/system[0]/pump-b</property>
+		<interpolation>
+			<entry><ind>1</ind><dep alias="../../../../switch-rotate-neg-deg" /></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>2</ind><dep alias="../../../../switch-rotate-deg" /></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.14211</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>Hydraulic3ASwitch</object-name>
+		<action>
+			<button>0</button>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/hydraulic/system[2]/pump-a</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Hydraulic3ASwitch</object-name>
+		<property>controls/hydraulic/system[2]/pump-a</property>
+		<factor alias="../../switch-rotate-deg" />
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.14211</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>Hydraulic3BSwitch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/hydraulic/system[2]/pump-b</property>
+				<wrap>0</wrap>
+				<value type="int">1</value>
+				<value type="int">0</value>
+				<value type="int">2</value>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/hydraulic/system[2]/pump-b</property>
+				<offset>-1</offset>
+				<wrap>0</wrap>
+				<value type="int">1</value>
+				<value type="int">0</value>
+				<value type="int">2</value>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Hydraulic3BSwitch</object-name>
+		<property>controls/hydraulic/system[2]/pump-b</property>
+		<interpolation>
+			<entry><ind>1</ind><dep alias="../../../../switch-rotate-neg-deg" /></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>2</ind><dep alias="../../../../switch-rotate-deg" /></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.14211</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>Hydraulic2Switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/hydraulic/system[1]/pump-b</property>
+				<wrap>0</wrap>
+				<value type="int">1</value>
+				<value type="int">0</value>
+				<value type="int">2</value>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/hydraulic/system[1]/pump-b</property>
+				<wrap>0</wrap>
+				<offset>-1</offset>
+				<value type="int">1</value>
+				<value type="int">0</value>
+				<value type="int">2</value>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Hydraulic2Switch</object-name>
+		<property>controls/hydraulic/system[1]/pump-b</property>
+		<interpolation>
+			<entry><ind>1</ind><dep alias="../../../../switch-rotate-neg-deg" /></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>2</ind><dep alias="../../../../switch-rotate-deg" /></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.14211</z-m>
+		</center>
+	</animation>	
+	
 	<!-- External lights -->
 	<animation>
 		<type>pick</type>

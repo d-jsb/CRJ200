@@ -8,9 +8,6 @@
         <name type="string">CimberAir (flying for SAS)</name>
         <texture>Liveries/SAS.png</texture>
       </livery>
-      <lights>
-        <texture>Liveries/SAS-lights.png</texture>
-      </lights>
     </model>
   </sim>
 

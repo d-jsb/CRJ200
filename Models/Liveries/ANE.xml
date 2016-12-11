@@ -8,9 +8,6 @@
         <name type="string">Air Nostrum</name>
         <texture>Liveries/ANE.png</texture>
       </livery>
-      <lights>
-        <texture>Liveries/ANE-Lights.png</texture>
-      </lights>
     </model>
   </sim>
 

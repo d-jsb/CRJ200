@@ -324,22 +324,52 @@
 	</key>
 	<key n="127">
 		<name>Delete</name>
+		<desc>Toggle thrust reversers</desc>
+		<binding>
+                <condition>
+                    <not>
+                        <property>/devices/status/keyboard/ctrl</property>
+                    </not>
+                </condition>
+			<command>property-toggle</command>
+                        <property>controls/engines/engine/reverser-cmd</property>
+		</binding>
+		<binding>
+                <condition>
+                    <not>
+                        <property>/devices/status/keyboard/ctrl</property>
+                    </not>
+                </condition>
+			<command>property-toggle</command>
+                        <property>controls/engines/engine[1]/reverser-cmd</property>
+		</binding>
+		<binding>
+                <condition>
+                        <property>/devices/status/keyboard/ctrl</property>
+                </condition>
+			<command>property-toggle</command>
+                        <property>controls/engines/engine/reverser-armed</property>
+		</binding>
+		<binding>
+                <condition>
+                        <property>/devices/status/keyboard/ctrl</property>
+                </condition>
+			<command>property-toggle</command>
+                        <property>controls/engines/engine[1]/reverser-armed</property>
+		</binding>
+	</key><!--
+	<key n="127">
+		<name>Ctrl-Delete</name>
 		<desc>Toggle thrust reversers or arm/disarm thrust reversers</desc>
 		<binding>
-			<command>nasal</command>
-			<script>
-				var ctrl = props.globals.getNode("devices/status/keyboard/ctrl").getBoolValue();
-				if (ctrl)
-				{
-					controls.toggleArmReversers();
-				}
-				else
-				{
-					controls.reverseThrust();
-				}
-			</script>
+			<command>property-toggle</command>
+                        <property>controls/engines/engine/reverser-active</property>
 		</binding>
-	</key>
+		<binding>
+			<command>property-toggle</command>
+                        <property>controls/engines/engine[1]/reverser-active</property>
+		</binding>
+	</key>-->
 	<!-- GUI -->
 	<key n="268">
 		<name>F12</name>

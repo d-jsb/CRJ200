@@ -140,25 +140,6 @@
   </offsets>
 </model>-->
 
-<!--<animation>
-      <type>material</type>
-      <object-name>aftlightedfuse</object-name>
-      <object-name>lightedfin</object-name>
-      <object-name>lightedrudder</object-name>
-      <object-name>lightedstab</object-name>
-      <object-name>lhlightedelevator</object-name>
-      <object-name>rhlightedelevator</object-name>
-      <object-name>lhlightedfuse</object-name>
-      <object-name>rhlightedfuse</object-name>
-      <object-name>lightedpath</object-name>
-      <object-name>lhlightedwing</object-name>
-      <object-name>rhlightedwing</object-name>
-      <object-name>lhlightedwinglet</object-name>
-      <object-name>rhlightedwinglet</object-name>
-      <property-base>sim/model/lights</property-base>
-      <texture-prop>texture</texture-prop>
-      <texture>UAX-lights.png</texture>
-</animation>-->
 
 <animation>
       <type>material</type>
@@ -204,7 +185,7 @@
       <texture>UAX.png</texture>
 </animation>
 <effect>
-		<inherits-from>Effects/CRJ700-lightmap-lowreflect</inherits-from>
+		<inherits-from>Effects/CRJ200-lightmap-lowreflect</inherits-from>
 		<parameters>
 			<lightmap-multi>1</lightmap-multi>
 			<lightmap-factor n="0"><use>sim/model/lights/landing-left-lightmap</use></lightmap-factor>
@@ -230,20 +211,25 @@
       <object-name>doorFR</object-name>
       <object-name>lgeardoor</object-name>
       <object-name>rgeardoor</object-name>
-      <object-name>lhaileron</object-name>
-      <object-name>lhelevator</object-name>
-      <object-name>lhibflap</object-name>
-      <object-name>lhibspoiler</object-name>
-      <object-name>lhnosedoor</object-name>                  
-      <object-name>lhobflap</object-name>
-      <object-name>lhobspoiler</object-name>          
-      <object-name>lhobspoilerb</object-name>
-      <object-name>lwing</object-name>
+      <object-name>lhnosedoor</object-name>    
       <object-name>no1engine</object-name>
       <object-name>no1reverser</object-name>      
       <object-name>no2engine</object-name>      
       <object-name>no2reverser</object-name>
       <object-name>nosedoor</object-name>      
+      <object-name>Misc</object-name>
+      <object-name>antennae</object-name>
+</effect>
+<effect>
+		<inherits-from>Effects/hireflect</inherits-from>      
+      <object-name>wings</object-name>     
+      <object-name>lhobflap</object-name>
+      <object-name>lhobspoiler</object-name>          
+      <object-name>lhobspoilerb</object-name>
+      <object-name>lhaileron</object-name>
+      <object-name>lhelevator</object-name>
+      <object-name>lhibflap</object-name>
+      <object-name>lhibspoiler</object-name>
       <object-name>path</object-name>            
       <object-name>rhaileron</object-name>
       <object-name>rhelevator</object-name>
@@ -253,9 +239,6 @@
       <object-name>rhobflap</object-name>
       <object-name>rhobspoiler</object-name>                  
       <object-name>rhobspoilerb</object-name>    
-      <object-name>rwing</object-name>
-      <object-name>Misc</object-name>
-      <object-name>antennae</object-name>
 </effect>
 <!--reflect without lightmap-->
 <!--<effect>
@@ -497,31 +480,6 @@
    </condition>
  </animation>
 
- <animation>
-   <type>select</type>
-   <object-name>RHLL</object-name>
-   <condition>
-     <and>
-     <property>sim/multiplay/generic/int[3]</property>
-     <not>
-     <property>sim/crashed</property>
-     </not>
-     </and>
-   </condition>
- </animation>
-
- <animation>
-   <type>select</type>
-   <object-name>NLL</object-name>
-   <condition>
-     <and>
-     <property>sim/multiplay/generic/int[2]</property>
-     <not>
-     <property>sim/crashed</property>
-     </not>
-     </and>
-   </condition>
- </animation>
 
  <animation>
   <type>select</type>
@@ -1000,25 +958,73 @@
   </emission>
  </animation>
 
+
+ <animation>
+   <type>select</type>
+   <object-name>LHLL</object-name>
+   <condition>
+     <and>
+     <property>sim/multiplay/generic/int[0]</property>
+     <not>
+     <property>sim/crashed</property>
+     </not>
+     </and>
+   </condition>
+ </animation>
+ <animation>
+   <type>select</type>
+   <object-name>NLL</object-name>
+   <condition>
+     <and>
+     <property>sim/multiplay/generic/int[1]</property>
+     <not>
+     <property>sim/crashed</property>
+     </not>
+     </and>
+   </condition>
+ </animation>
+ <animation>
+   <type>select</type>
+   <object-name>RHLL</object-name>
+   <condition>
+     <and>
+     <property>sim/multiplay/generic/int[2]</property>
+     <not>
+     <property>sim/crashed</property>
+     </not>
+     </and>
+   </condition>
+ </animation>
  <animation>
   <type>material</type>
-  <object-name>lhlandinglight</object-name>
+  <object-name>LHLL</object-name>
+  <emission>
+    <red>1</red>
+    <green>0.94</green>
+    <blue>0.9</blue>
+  <factor-prop>sim/multiplay/generic/int[0]</factor-prop>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>NLL</object-name>
   <emission>
     <red>1</red>
     <green>0.94</green>
     <blue>0.9</blue>
   <factor-prop>sim/multiplay/generic/int[1]</factor-prop>
   </emission>
- </animation>
+</animation>
 
  <animation>
   <type>material</type>
-  <object-name>rhlandinglight</object-name>
+  <object-name>RHLL</object-name>
   <emission>
     <red>1</red>
     <green>0.94</green>
     <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[3]</factor-prop>
+  <factor-prop>sim/multiplay/generic/int[2]</factor-prop>
   </emission>
  </animation>
 
@@ -1032,7 +1038,7 @@
   <factor-prop>sim/multiplay/generic/int[4]</factor-prop>
   </emission>
  </animation>
-
+<!--
  <animation>
   <type>material</type>
   <object-name>lhlandinglight</object-name>
@@ -1040,7 +1046,7 @@
     <red>1</red>
     <green>0.94</green>
     <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[1]</factor-prop>
+  <factor-prop>sim/multiplay/generic/int[0]</factor-prop>
   </emission>
  </animation>
 
@@ -1051,7 +1057,7 @@
     <red>1</red>
     <green>0.94</green>
     <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[2]</factor-prop>
+  <factor-prop>sim/multiplay/generic/int[1]</factor-prop>
   </emission>
 
  </animation>
@@ -1063,9 +1069,9 @@
     <red>1</red>
     <green>0.94</green>
     <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[3]</factor-prop>
+  <factor-prop>sim/multiplay/generic/int[2]</factor-prop>
   </emission>
- </animation>
+ </animation>-->
 
  <animation>
   <type>select</type>

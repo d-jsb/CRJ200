@@ -8,9 +8,6 @@
         <name type="string">US Airways Express</name>
         <texture>Liveries/AWI.png</texture>
       </livery>
-      <lights>
-        <texture>Liveries/AWI-lights.png</texture>
-      </lights>
     </model>
   </sim>
 
