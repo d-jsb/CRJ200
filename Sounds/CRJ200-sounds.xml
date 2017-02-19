@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Bombardier CRJ700 series -->
+<!-- Bombardier CRJ200 series -->
 <!-- Internal sound configuration -->
 
 <PropertyList include="common-sounds.xml" omit-node="y">
@@ -9,6 +9,46 @@
 		<airspeed-kt>velocities/airspeed-kt</airspeed-kt>
 	</params>
 	<fx>
+		<click>
+			<name>Switch click</name>
+			<mode>once</mode>
+			<path>Sounds/click.wav</path>
+			<condition>
+                                <property>sim/sound/click</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+		</click><!--
+		<click>
+			<name>Switch click 2</name>
+			<mode>once</mode>
+			<path>Sounds/click.wav</path>
+			<condition>
+                            <not>
+                                <property>sim/sound/click</property>
+                            </not>
+				<property>sim/current-view/internal</property>
+			</condition>
+		</click>-->
+		<click2>
+			<name>Switch click2</name>
+			<mode>once</mode>
+			<path>Sounds/click2.wav</path>
+			<condition>
+				<property>sim/sound/click2</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+		</click2>
+		<click2>
+			<name>Switch click2-2</name>
+			<mode>once</mode>
+			<path>Sounds/click2.wav</path>
+			<condition>
+                            <not>
+                                <property>sim/sound/click2</property>
+                            </not>
+				<property>sim/current-view/internal</property>
+			</condition>
+		</click2>
 		<!-- APU, same for inside and outside -->
 		<apu>
 			<name>APU starting</name>

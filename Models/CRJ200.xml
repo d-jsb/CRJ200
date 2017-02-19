@@ -219,6 +219,8 @@
       <object-name>nosedoor</object-name>      
       <object-name>Misc</object-name>
       <object-name>antennae</object-name>
+      <object-name>rhelevator</object-name>
+      <object-name>lhelevator</object-name>
 </effect>
 <effect>
 		<inherits-from>Effects/hireflect</inherits-from>      
@@ -227,12 +229,10 @@
       <object-name>lhobspoiler</object-name>          
       <object-name>lhobspoilerb</object-name>
       <object-name>lhaileron</object-name>
-      <object-name>lhelevator</object-name>
       <object-name>lhibflap</object-name>
       <object-name>lhibspoiler</object-name>
       <object-name>path</object-name>            
       <object-name>rhaileron</object-name>
-      <object-name>rhelevator</object-name>
       <object-name>rhibflap</object-name>
       <object-name>rhibspoiler</object-name>
       <object-name>rhnosedoor</object-name>                  
@@ -271,26 +271,14 @@
 	<object-name>noselandinglights</object-name>
 	<object-name>rhltcover</object-name>
 	<object-name>lhltcover</object-name>
+	<object-name>lbeaconlens</object-name>
+	<object-name>ubeaconlens</object-name>
     </effect>
 
   <animation>
    <type>noshadow</type>
-   <object-name>LHLL</object-name>
-   <object-name>NLL</object-name>
-   <object-name>RHLL</object-name>
-   <object-name>LHTL</object-name>
-   <object-name>RHTL</object-name>
-   <object-name>LHWL</object-name>
-   <object-name>RHWL</object-name>
-   <object-name>LHNL</object-name>
-   <object-name>RHNL</object-name>
-   <object-name>LTNL</object-name>
-   <object-name>UTNL</object-name>
    <object-name>ubeacon</object-name>
    <object-name>lbeacon</object-name>
-   <object-name>LHSL</object-name>
-   <object-name>LHSL</object-name>
-   <object-name>TSL</object-name>
  </animation>
 
  <!--Doors-->
@@ -476,6 +464,45 @@
                             <z-m>0.0</z-m>
                     </offsets>
             </model>
+        <!--Tail Navigation Light-->
+	<model>
+		<name>nav-light-tail</name>
+		<path>Aircraft/CRJ200/Models/Lights/whitenav.xml</path>
+		<offsets>
+                            <x-m>14.12761</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>1.30673</z-m>
+		</offsets>
+	</model>
+	<model>
+            <name>nav-light-tail-als</name>
+		<path>Aircraft/CRJ200/Models/Effects/Lights/tail-navlight.xml</path>
+		<offsets>
+                            <x-m>14.06</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>1.30673</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>nav-light-tail-2</name>
+		<path>Aircraft/CRJ200/Models/Lights/whitenav.xml</path>
+		<offsets>
+                            <x-m>16.0337</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>4.66</z-m>
+		</offsets>
+	</model>
+	<model>
+            <name>nav-light-tail-2-als</name>
+		<path>Aircraft/CRJ200/Models/Effects/Lights/tail-navlight.xml</path>
+		<offsets>
+                            <x-m>15.95</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>4.66</z-m>
+		</offsets>
+	</model>
+        <!--Anticollision Strobes-->        
+            <!--Wing Strobes-->
 	<model>
 		<name>strobe-light-left</name>
 		<path>Aircraft/CRJ200/Models/Lights/strobe.xml</path>
@@ -512,6 +539,97 @@
                             <z-m>0.0</z-m>
 		</offsets>
 	</model>
+        <!--Tail Strobe-->
+	<model>
+		<name>strobe-tail</name>
+		<path>Aircraft/CRJ200/Models/Lights/strobe.xml</path>
+		<offsets>
+                            <x-m>14.12761</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>1.30673</z-m>
+		</offsets>
+	</model>
+	<model>
+            <name>strobe-tail-als</name>
+		<path>Aircraft/CRJ200/Models/Effects/Lights/right-strobe.xml</path>
+		<offsets>
+                            <x-m>14.12761</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>1.30673</z-m>
+		</offsets>
+	</model>
+        <!-- Anticollision Beacons-->
+	<model>
+		<name>beacon-up</name>
+		<path>Aircraft/CRJ200/Models/Lights/beacon.xml</path>
+		<offsets>
+                            <x-m>-4.40</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>2.17</z-m>
+		</offsets>
+	</model>
+	<model>
+            <name>beacon-up-als</name>
+		<path>Aircraft/CRJ200/Models/Effects/Lights/beacon.xml</path>
+		<offsets>
+                            <x-m>-4.40</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>2.17</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>beacon-bottom</name>
+		<path>Aircraft/CRJ200/Models/Lights/beacon.xml</path>
+		<offsets>
+                            <x-m>-4.40</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>-0.77</z-m>
+		</offsets>
+	</model>
+	<model>
+            <name>beacon-bottom-als</name>
+		<path>Aircraft/CRJ200/Models/Effects/Lights/beacon.xml</path>
+		<offsets>
+                            <x-m>-4.40</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>-0.77</z-m>
+		</offsets>
+	</model>
+        <!-- Landing Lights-->
+        <!--Left-->
+	<model>
+		<name>landing-left</name>
+		<path>Aircraft/CRJ200/Models/Lights/landing-left.xml</path>
+		<offsets>
+                            <x-m>-1.41642</x-m>
+                            <y-m>-2.08998</y-m>
+                            <z-m>-0.46911</z-m>
+		</offsets>
+	</model>
+        <!--Right-->
+	<model>
+		<name>landing-right</name>
+		<path>Aircraft/CRJ200/Models/Lights/landing-right.xml</path>
+		<offsets>
+                            <x-m>-1.41642</x-m>
+                            <y-m>2.08998</y-m>
+                            <z-m>-0.46911</z-m>
+		</offsets>
+	</model>
+        <!--Nose-->
+	<model>
+            <name>landing-nose</name>
+		<path>Aircraft/CRJ200/Models/Lights/landing.xml</path>
+		<offsets>
+                            <x-m>-12.27161</x-m>
+                            <y-m>0.0</y-m>
+                            <z-m>-0.44</z-m>
+		</offsets>
+	</model>
+        
+        
+        
+        
         <!--Select Animation-->
     <!-- ================================================================== -->
     <!-- ALS Lighting                                                       -->
@@ -521,10 +639,13 @@
         <type>select</type>
         <object-name>nav-light-left-als</object-name>
         <object-name>nav-light-right-als</object-name>
+        <object-name>nav-light-tail-als</object-name>
+        <object-name>nav-light-tail-2-als</object-name>
         <object-name>strobe-light-left-als</object-name>
         <object-name>strobe-light-right-als</object-name>
-        <object-name>beacon-light-top-als</object-name>
-        <object-name>beacon-light-bottom-als</object-name>
+        <object-name>strobe-tail-als</object-name>
+        <object-name>beacon-up-als</object-name>
+        <object-name>beacon-bottom-als</object-name>
         <nopreview/>
         <condition>
                 <property>/sim/rendering/shaders/skydome</property>
@@ -539,10 +660,13 @@
         <type>select</type>
         <object-name>nav-light-left</object-name>
         <object-name>nav-light-right</object-name>
+        <object-name>nav-light-tail</object-name>
+        <object-name>nav-light-tail-2</object-name>
         <object-name>strobe-light-left</object-name>
         <object-name>strobe-light-right</object-name>
-        <object-name>beacon-light-top</object-name>
-        <object-name>beacon-light-bottom</object-name>
+        <object-name>strobe-tail</object-name>
+        <object-name>beacon-up</object-name>
+        <object-name>beacon-bottom</object-name>
         <nopreview/>
         <condition>
                 <not>
@@ -551,608 +675,6 @@
         </condition>
     </animation>
 
- 
- <animation>
-   <type>select</type>
-   <object-name>LHLL</object-name>
-   <condition>
-   <and>
-     <property>sim/multiplay/generic/int[1]</property>
-   <not>
-   <property>sim/crashed</property>
-   </not>
-   </and>
-   </condition>
- </animation>
-
- <animation>
-   <type>select</type>
-   <object-name>LHTL</object-name>
-   <object-name>RHTL</object-name>
-   <condition>
-   <and>
-     <property>sim/multiplay/generic/int[7]</property>
-   <not>
-   <property>sim/crashed</property>
-   </not>
-   </and>
-   </condition>
- </animation>
-
- <animation>
-   <type>select</type>
-   <object-name>rhlightedfuse</object-name>
-   <condition>
-   <and>
-    <or>
-     <property>sim/multiplay/generic/int[3]</property>
-     <property>sim/multiplay/generic/int[7]</property>
-    </or>
-    <not>
-    <property>sim/crashed</property>
-    </not>
-   </and>
-   </condition>
- </animation>
-
-
- <animation>
-  <type>select</type>
-  <object-name>lbeacon</object-name>
-  <object-name>LBL</object-name>
-  <object-name>ubeacon</object-name>
-  <object-name>UBL</object-name>
-   <condition>
-   <and>
-    <property>sim/multiplay/generic/int[0]</property>
-   <not>
-   <property>sim/crashed</property>
-   </not>
-   </and>
-   </condition>
- </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>LHSL</object-name>
-  <object-name>RHSL</object-name>
-  <object-name>TSL</object-name>
-   <condition>
-   <and>
-    <property>sim/multiplay/generic/int[8]</property>
-   <not>
-   <property>sim/crashed</property>
-   </not>
-   </and>
-   </condition>
- </animation>
-
- <animation>
-   <type>select</type>
-   <object-name>LHWL</object-name>
-   <object-name>RHWL</object-name>
-   <condition>
-   <and>
-     <property>sim/multiplay/generic/int[4]</property>
-     <not>
-     <property>sim/crashed</property>
-     </not>
-   </and>
-   </condition>
- </animation>
-
- <animation>
-  <type>select</type>
-  <object-name>LHNL</object-name>
-  <object-name>RHNL</object-name>
-  <object-name>LTNL</object-name>
-  <object-name>UTNL</object-name>
-   <condition>
-   <and>
-  <property>sim/multiplay/generic/int[5]</property>
-   <not>
-   <property>sim/crashed</property>
-   </not>
-   </and>
-   </condition>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>LHLL</object-name>
-  <center>
-   <x-m>-1</x-m>
-   <y-m>-1.92</y-m>
-   <z-m>-0.5</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>-0.15</z>
-  </axis>
-  <power>5</power>
-  <factor>1</factor>
-  <offset>0</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>LHTL</object-name>
-  <center>
-   <x-m>-0.9</x-m>
-   <y-m>-2.08</y-m>
-   <z-m>-0.5</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-  <power>5</power>
-  <factor>1</factor>
-  <offset>0</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>RHLL</object-name>
-  <center>
-   <x-m>-1</x-m>
-   <y-m>1.92</y-m>
-   <z-m>-0.5</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>-0.15</z>
-  </axis>
-  <power>5</power>
-  <factor>1</factor>
-  <offset>0</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>NLL</object-name>
-  <center>
-   <x-m>-11.9</x-m>
-   <y-m>0</y-m>
-   <z-m>-0.36</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>-0.15</z>
-  </axis>
-  <power>5</power>
-  <factor>1</factor>
-  <offset>0</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>RHTL</object-name>
-  <center>
-   <x-m>-0.9</x-m>
-   <y-m>2.08</y-m>
-   <z-m>-0.5</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-  <power>5</power>
-  <factor>1</factor>
-  <offset>0</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>LHWL</object-name>
-  <center>
-   <x-m>-1.57</x-m>
-   <y-m>-1.45</y-m>
-   <z-m>-0.05</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>-1.2</y>
-   <z>-0.15</z>
-  </axis>
-  <power>5</power>
-  <factor>1</factor>
-  <offset>0</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>RHWL</object-name>
-  <center>
-   <x-m>-1.57</x-m>
-   <y-m>1.45</y-m>
-   <z-m>-0.05</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>1.2</y>
-   <z>-0.15</z>
-  </axis>
-  <power>5</power>
-  <factor>1</factor>
-  <offset>0</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>LHNL</object-name>
-  <center>
-   <x-m>3.985</x-m>
-   <y-m>-11.01</y-m>
-   <z-m>-0.05</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
-  <power>4</power>
-  <factor>1</factor>
-  <offset>0.4</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>RHNL</object-name>
-  <center>
-   <x-m>3.985</x-m>
-   <y-m>11.01</y-m>
-   <z-m>-0.05</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
-  <power>4</power>
-  <factor>1</factor>
-  <offset>0.4</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>LTNL</object-name>
-  <center>
-   <x-m>14.1</x-m>
-   <y-m>0</y-m>
-   <z-m>1.3</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-  <power>4</power>
-  <factor>1</factor>
-  <offset>0.4</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>UTNL</object-name>
-  <center>
-   <x-m>16</x-m>
-   <y-m>0</y-m>
-   <z-m>4.665</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-  <power>4</power>
-  <factor>1</factor>
-  <offset>0.4</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>ubeacon</object-name>
-  <object-name>lbeacon</object-name>
-  <emission>
-    <red>1.0</red>
-    <green>0</green>
-    <blue>0</blue>
-  </emission>
- </animation>
-
-<animation>
-   <type>translate</type>
-   <object-name>LBL</object-name>
-   <offset-m>4.475757</offset-m>
-   <axis>
-     <x>-4.4</x>
-     <y>0</y>
-     <z>-0.82</z>
-   </axis>
- </animation>
-
- <animation>
-   <type>billboard</type>
-   <object-name>LBL</object-name>
- </animation>
-
-<animation>
-   <type>translate</type>
-   <object-name>UBL</object-name>
-   <offset-m>4.897193</offset-m>
-   <axis>
-     <x>-4.4</x>
-     <y>0</y>
-     <z>2.15</z>
-   </axis>
- </animation>
-
- <animation>
-   <type>billboard</type>
-   <object-name>UBL</object-name>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>LHSL</object-name>
-  <center>
-   <x-m>4</x-m>
-   <y-m>-11.1</y-m>
-   <z-m>-0.05</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
-  <power>2</power>
-  <factor>1</factor>
-  <offset>0.2</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>RHSL</object-name>
-  <center>
-   <x-m>4</x-m>
-   <y-m>11.1</y-m>
-   <z-m>-0.05</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
-  <power>1</power>
-  <factor>1</factor>
-  <offset>0.2</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
-  <animation>
-  <type>flash</type>
-  <object-name>TSL</object-name>
-  <center>
-   <x-m>14.1</x-m>
-   <y-m>0</y-m>
-   <z-m>1.3</z-m>
-  </center>
-  <axis>
-   <x>1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
-  <power>1</power>
-  <factor>1</factor>
-  <offset>0.2</offset>
-  <two-sides type="bool">false</two-sides>
-  <min>0.01</min>
-  <max>1</max>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>lhnavlight</object-name>
-  <emission>
-    <red>1</red>
-    <green>0</green>
-    <blue>0</blue>
-  <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>rhnavlight</object-name>
-  <emission>
-    <red>0</red>
-    <green>1</green>
-    <blue>0.2</blue>
-  <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>lhnavlight</object-name>
-  <emission>
-    <red>1</red>
-    <green>0</green>
-    <blue>0</blue>
-  <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>rhnavlight</object-name>
-  <emission>
-    <red>0</red>
-    <green>1</green>
-    <blue>0.2</blue>
-  <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>ltnavlight</object-name>
-  <object-name>utnavlight</object-name>
-  <emission>
-    <red>1</red>
-    <green>0.94</green>
-    <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>logolts</object-name>
-  <emission>
-    <red>1</red>
-    <green>0.94</green>
-    <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[6]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>lhtaxilight</object-name>
-  <object-name>rhtaxilight</object-name>
-  <emission>
-    <red>1</red>
-    <green>0.94</green>
-    <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[7]</factor-prop>
-  </emission>
- </animation>
-
-
- <animation>
-   <type>select</type>
-   <object-name>LHLL</object-name>
-   <condition>
-     <and>
-     <property>sim/multiplay/generic/int[0]</property>
-     <not>
-     <property>sim/crashed</property>
-     </not>
-     </and>
-   </condition>
- </animation>
- <animation>
-   <type>select</type>
-   <object-name>NLL</object-name>
-   <condition>
-     <and>
-     <property>sim/multiplay/generic/int[1]</property>
-     <not>
-     <property>sim/crashed</property>
-     </not>
-     </and>
-   </condition>
- </animation>
- <animation>
-   <type>select</type>
-   <object-name>RHLL</object-name>
-   <condition>
-     <and>
-     <property>sim/multiplay/generic/int[2]</property>
-     <not>
-     <property>sim/crashed</property>
-     </not>
-     </and>
-   </condition>
- </animation>
- <animation>
-  <type>material</type>
-  <object-name>LHLL</object-name>
-  <emission>
-    <red>1</red>
-    <green>0.94</green>
-    <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[0]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>NLL</object-name>
-  <emission>
-    <red>1</red>
-    <green>0.94</green>
-    <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[1]</factor-prop>
-  </emission>
-</animation>
-
- <animation>
-  <type>material</type>
-  <object-name>RHLL</object-name>
-  <emission>
-    <red>1</red>
-    <green>0.94</green>
-    <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[2]</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>winglights</object-name>
-  <emission>
-    <red>1</red>
-    <green>0.94</green>
-    <blue>0.9</blue>
-  <factor-prop>sim/multiplay/generic/int[4]</factor-prop>
-  </emission>
- </animation>
 <!--
  <animation>
   <type>material</type>
@@ -1873,11 +1395,8 @@
   <type>rotate</type>
   <object-name>hstabedge</object-name>
   <object-name>hstab</object-name>
-  <object-name>lightedstab</object-name>
   <object-name>lhelevator</object-name>
-  <object-name>lhlightedelevator</object-name>
   <object-name>rhelevator</object-name>
-  <object-name>rhlightedelevator</object-name>
   <property>controls/flight/elevator-trim</property>
   <factor>15</factor>
   <offset-deg>0</offset-deg>   
@@ -1896,7 +1415,6 @@
  <animation>
   <type>rotate</type>
   <object-name>lhelevator</object-name>
-  <object-name>lhlightedelevator</object-name>
   <property>surface-positions/elevator-pos-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>   
@@ -1915,7 +1433,6 @@
  <animation>
   <type>rotate</type>
   <object-name>rhelevator</object-name>
-  <object-name>rhlightedelevator</object-name>
   <property>surface-positions/elevator-pos-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>   
@@ -1934,7 +1451,6 @@
  <animation>
   <type>rotate</type>
   <object-name>rudder</object-name>
-  <object-name>lightedrudder</object-name>
   <property>surface-positions/rudder-pos-norm</property>
   <factor>20</factor>
   <offset-deg>0</offset-deg>   

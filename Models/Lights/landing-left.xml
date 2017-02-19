@@ -20,7 +20,7 @@
 		<object-name>Cone</object-name>
 		<condition>
 			<and>
-				<property>systems/electrical/outputs/landing-lights</property>
+				<property>systems/DC/outputs/landing-lights</property>
 			</and>
 		</condition>
 	</animation>

@@ -82,15 +82,6 @@ positions or are almost the same position for C700/900/1000.
 			</position>
 		</speedbrake> -->
 		<!-- Switch effects -->
-		<click>
-			<name>Switch click</name>
-			<mode>once</mode>
-			<path>Sounds/click.wav</path>
-			<condition>
-				<property>sim/sound/click</property>
-				<property>sim/current-view/internal</property>
-			</condition>
-		</click>
 		<click2>
 			<name>Switch click2</name>
 			<mode>once</mode>

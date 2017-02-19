@@ -115,7 +115,7 @@ var fast_loop = Loop(0, func {
         if(getprop("/systems/DC/outputs/beacon") or 0>=15){
         setprop("/systems/DC/outputs/beacon-norm", 1);
         }else{
-        setprop("/systems/electrical/outputs/beacon-norm", 0);
+        setprop("/systems/DC/outputs/beacon-norm", 0);
         }
         if(getprop("/systems/DC/outputs/wing-ac-lights") or 0>=15){
         setprop("/systems/DC/outputs/strobe-norm", 1);

@@ -23,7 +23,7 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
     <airplane mass="30900">
 
     <!-- Approach configuration -->
-       <approach speed="120" aoa="4" fuel=".2">
+       <approach speed="120" aoa="3" fuel=".2">
           <control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.2"/>
           <control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.2"/>
           <control-setting axis="/controls/flight/flaps" value="1.0"/>

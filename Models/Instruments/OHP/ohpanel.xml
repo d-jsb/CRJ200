@@ -60,6 +60,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/electric/external-power</property>
 			</binding>
 		</action>
@@ -84,12 +88,16 @@
 		<type>pick</type>
 		<object-name>BatterySwitch</object-name>
 		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>
-			<binding>
-				<command>property-toggle</command>
-				<property>controls/electric/battery-switch</property>
-			</binding>
+                    <button>0</button>
+                    <repeatable type="bool">false</repeatable>
+                    <binding>
+                            <command>property-toggle</command>
+                            <property>sim/sound/click</property>
+                    </binding>
+                    <binding>
+                            <command>property-toggle</command>
+                            <property>controls/electric/battery-switch</property>
+                    </binding>
 		</action>
 	</animation>
 	<animation>
@@ -108,6 +116,59 @@
 			<z-m>0.136</z-m>
 		</center>
 	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ACBtn</object-name>
+		<object-name>DCBtn</object-name>
+		<object-name>ACUse</object-name>
+		<object-name>DCUse</object-name>
+		<object-name>ACAvail</object-name>
+		<object-name>DCAvail</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/ac-service-selected</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>ACAvail</object-name>
+		<object-name>DCAvail</object-name>
+		<condition>
+                        <property>controls/electric/ac-service-avail</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>ACUse</object-name>
+		<object-name>DCUse</object-name>
+		<condition>
+                        <property>controls/electric/ac-service-selected</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>ACBtn</object-name>
+		<object-name>DCBtn</object-name>
+		<object-name>ACUse</object-name>
+		<object-name>DCUse</object-name>
+		<object-name>ACAvail</object-name>
+		<object-name>DCAvail</object-name>
+                <property>controls/electric/ac-service-selected</property>
+		<factor alias="../../button-translate-m" />
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
         <!--IDG Buttons-->
 	<animation>
 		<type>pick</type>
@@ -118,6 +179,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electric/idg1-cover</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -147,6 +212,10 @@
 				<command>property-toggle</command>
 				<property>controls/electric/idg1-disc</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -172,6 +241,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electric/idg2-cover</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -201,6 +274,10 @@
 				<command>property-toggle</command>
 				<property>controls/electric/idg2-disc</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -228,6 +305,10 @@
 				<command>property-toggle</command>
 				<property>controls/electric/ac-altn</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -244,6 +325,10 @@
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-toggle</command>
                                 <property>controls/electric/engine[0]/generator</property>    
@@ -274,6 +359,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/electric/APU-generator</property>
 			</binding>
 		</action>
@@ -300,6 +389,10 @@
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electric/engine[1]/generator</property>
@@ -331,6 +424,10 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
 				<command>property-cycle</command>
 				<property>controls/hydraulic/system[0]/pump-b</property>
 				<wrap>0</wrap>
@@ -342,6 +439,10 @@
 		<action>
 			<button>1</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-cycle</command>
 				<property>controls/hydraulic/system[0]/pump-b</property>
@@ -383,6 +484,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/hydraulic/system[2]/pump-a</property>
 			</binding>
 		</action>
@@ -411,6 +516,10 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
 				<command>property-cycle</command>
 				<property>controls/hydraulic/system[2]/pump-b</property>
 				<wrap>0</wrap>
@@ -422,6 +531,10 @@
 		<action>
 			<button>1</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-cycle</command>
 				<property>controls/hydraulic/system[2]/pump-b</property>
@@ -461,6 +574,10 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
 				<command>property-cycle</command>
 				<property>controls/hydraulic/system[1]/pump-b</property>
 				<wrap>0</wrap>
@@ -472,6 +589,10 @@
 		<action>
 			<button>1</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-cycle</command>
 				<property>controls/hydraulic/system[1]/pump-b</property>
@@ -513,6 +634,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/lighting/nav-lights</property>
 			</binding>
 		</action>
@@ -540,6 +665,10 @@
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/lighting/beacon</property>
@@ -571,6 +700,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/lighting/strobe</property>
 			</binding>
 		</action>
@@ -600,6 +733,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/lighting/logo-lights</property>
 			</binding>
 		</action>
@@ -627,6 +764,10 @@
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/lighting/wing-lights</property>
@@ -662,6 +803,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>consumables/fuel/tank[0]/selected</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -706,6 +851,10 @@
 				<command>property-toggle</command>
 				<property>controls/fuel/gravity-xflow</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -748,6 +897,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>consumables/fuel/tank[1]/selected</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -795,6 +948,10 @@
 				<value>2</value>
 				<value>3</value>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click4</property>
+			</binding>
 		</action>
 		<action>
 			<button>1</button>
@@ -807,6 +964,10 @@
 				<value>2</value>
 				<value>1</value>
 				<value>0</value>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click4</property>
 			</binding>
 		</action>
 	</animation>
@@ -841,6 +1002,10 @@
 				<command>property-toggle</command>
 				<property>controls/APU/electronic-control-unit</property>
 				<property>controls/APU/fuel-pump</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -883,6 +1048,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/APU/off-on</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -932,6 +1101,10 @@
 				<property>controls/engines/engine[0]/starter</property>
 				<value type="bool">true</value>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -969,11 +1142,19 @@
                             <property>controls/engines/engine[0]/stop</property>
                             <value type="bool">1</value>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
                         <mod-up>
                             <binding>
                                 <command>property-assign</command>
                                 <property>controls/engines/engine[0]/stop</property>
                                 <value type="bool">0</value>
+                            </binding>
+                            <binding>
+                                    <command>property-toggle</command>
+                                    <property>sim/sound/click2</property>
                             </binding>
                         </mod-up>
 		</action>
@@ -1008,6 +1189,10 @@
 				<command>property-assign</command>
 				<property>controls/engines/engine[1]/starter</property>
 				<value type="bool">true</value>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -1047,11 +1232,19 @@
                             <property>controls/engines/engine[1]/stop</property>
                             <value type="bool">true</value>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
                         <mod-up>
                             <binding>
                                 <command>property-assign</command>
                                 <property>controls/engines/engine[1]/stop</property>
                                 <value type="bool">false</value>
+                            </binding>
+                            <binding>
+                                    <command>property-toggle</command>
+                                    <property>sim/sound/click2</property>
                             </binding>
                         </mod-up>
 		</action>
@@ -1096,10 +1289,18 @@
 				<command>property-toggle</command>
 				<property>controls/engines/engine[0]/ignition-btn</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
                         <mod-up>
                             <binding>
                                     <command>property-toggle</command>
                                     <property>controls/engines/engine[0]/ignition-btn</property>
+                            </binding>
+                            <binding>
+                                    <command>property-toggle</command>
+                                    <property>sim/sound/click2</property>
                             </binding>
                         </mod-up>
 		</action>
@@ -1158,10 +1359,18 @@
 				<command>property-toggle</command>
 				<property>controls/engines/engine[1]/ignition-btn</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
                         <mod-up>
                             <binding>
                                     <command>property-toggle</command>
                                     <property>controls/engines/engine[1]/ignition-btn</property>
+                            </binding>
+                            <binding>
+                                    <command>property-toggle</command>
+                                    <property>sim/sound/click2</property>
                             </binding>
                         </mod-up>
 		</action>
@@ -1211,6 +1420,10 @@
 				<command>property-toggle</command>
 				<property>controls/engines/cont-ignition</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -1244,6 +1457,10 @@
 				<command>property-toggle</command>
 				<property>controls/pneumatic/ram-air-turbine-cover</property>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -1273,6 +1490,10 @@
 				<command>property-assign</command>
 				<property>controls/pneumatic/ram-air-turbine</property>
 				<value type="bool">true</value>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click2</property>
 			</binding>
 		</action>
 	</animation>
@@ -1305,6 +1526,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/anti-ice/wing-heat</property>
 			</binding>
 		</action>
@@ -1333,6 +1558,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/anti-ice/engine[0]/inlet-heat</property>
 			</binding>
 		</action>
@@ -1359,6 +1588,10 @@
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/anti-ice/engine[1]/inlet-heat</property>
@@ -1391,6 +1624,10 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
 				<property>controls/lighting/dome</property>
 			</binding>
 		</action>
@@ -1417,6 +1654,10 @@
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click</property>
+			</binding>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/lighting/standby-compass</property>
@@ -1452,6 +1693,10 @@
 				<step>0.05</step>
 				<max>1</max>
 			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click4</property>
+			</binding>
 		</action>
 		<action>
 			<button>1</button>
@@ -1462,6 +1707,10 @@
 				<property>controls/lighting/panel-overhead-norm</property>
 				<step>-0.05</step>
 				<min>0</min>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/sound/click4</property>
 			</binding>
 		</action>
 	</animation>
