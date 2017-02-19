@@ -423,19 +423,134 @@
 		</axis>
 	</animation>
     <animation>
-		<type>rotate</type>
-		<object-name>wiperRblade</object-name>
-		<property>surface-positions/right-wiper-pos-norm</property>
-		<factor>-30</factor>
-		<axis>
-			<x1-m>-10.29185</x1-m>
-			<y1-m>0.02479</y1-m>
-			<z1-m>1.26757</z1-m>
-			<x2-m>-10.29569</x2-m>
-			<y2-m>0.02479</y2-m>
-			<z2-m>1.27415</z2-m>
-		</axis>
-	</animation>
+            <type>rotate</type>
+            <object-name>wiperRblade</object-name>
+            <property>surface-positions/right-wiper-pos-norm</property>
+            <factor>-30</factor>
+            <axis>
+                    <x1-m>-10.29185</x1-m>
+                    <y1-m>0.02479</y1-m>
+                    <z1-m>1.26757</z1-m>
+                    <x2-m>-10.29569</x2-m>
+                    <y2-m>0.02479</y2-m>
+                    <z2-m>1.27415</z2-m>
+            </axis>
+    </animation>
+        
+        
+    <!--LIGHTS-->        
+    <!--NAV Lights-->
+            <model>
+                    <name>nav-light-left</name>
+                    <path>Aircraft/CRJ200/Models/Lights/rednav.xml</path>
+                    <offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>-11.04401</y-m>
+                            <z-m>0.0</z-m>
+                    </offsets>
+            </model>
+            <model>
+                    <name>nav-light-left-als</name>
+                    <path>Aircraft/CRJ200/Models/Effects/Lights/red-navlight.xml</path>
+                    <offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>-11.04401</y-m>
+                            <z-m>0.0</z-m>
+                    </offsets>
+            </model>
+            <model>
+                    <name>nav-light-right</name>
+                    <path>Aircraft/CRJ200/Models/Lights/greennav.xml</path>
+                    <offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>11.04401</y-m>
+                            <z-m>0.0</z-m>
+                    </offsets>
+            </model>
+            <model>
+                    <name>nav-light-right-als</name>
+                    <path>Aircraft/CRJ200/Models/Effects/Lights/green-navlight.xml</path>
+                    <offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>11.04401</y-m>
+                            <z-m>0.0</z-m>
+                    </offsets>
+            </model>
+	<model>
+		<name>strobe-light-left</name>
+		<path>Aircraft/CRJ200/Models/Lights/strobe.xml</path>
+		<offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>-11.04401</y-m>
+                            <z-m>0.0</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>strobe-light-left-als</name>
+		<path>Aircraft/CRJ200/Models/Effects/Lights/left-strobe.xml</path>
+		<offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>-11.04401</y-m>
+                            <z-m>0.0</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>strobe-light-right</name>
+		<path>Aircraft/CRJ200/Models/Lights/strobe.xml</path>
+		<offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>11.04401</y-m>
+                            <z-m>0.0</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>strobe-light-right-als</name>
+		<path>Aircraft/CRJ200/Models/Effects/Lights/right-strobe.xml</path>
+		<offsets>
+                            <x-m>3.95872</x-m>
+                            <y-m>11.04401</y-m>
+                            <z-m>0.0</z-m>
+		</offsets>
+	</model>
+        <!--Select Animation-->
+    <!-- ================================================================== -->
+    <!-- ALS Lighting                                                       -->
+    <!-- ================================================================== -->
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-left-als</object-name>
+        <object-name>nav-light-right-als</object-name>
+        <object-name>strobe-light-left-als</object-name>
+        <object-name>strobe-light-right-als</object-name>
+        <object-name>beacon-light-top-als</object-name>
+        <object-name>beacon-light-bottom-als</object-name>
+        <nopreview/>
+        <condition>
+                <property>/sim/rendering/shaders/skydome</property>
+        </condition>
+    </animation>
+
+    <!-- ================================================================== -->
+    <!-- Basic And Rembrandt Lighting                                       -->
+    <!-- ================================================================== -->
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-left</object-name>
+        <object-name>nav-light-right</object-name>
+        <object-name>strobe-light-left</object-name>
+        <object-name>strobe-light-right</object-name>
+        <object-name>beacon-light-top</object-name>
+        <object-name>beacon-light-bottom</object-name>
+        <nopreview/>
+        <condition>
+                <not>
+                    <property>/sim/rendering/shaders/skydome</property>
+                </not>
+        </condition>
+    </animation>
+
  
  <animation>
    <type>select</type>

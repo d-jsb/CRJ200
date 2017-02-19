@@ -554,11 +554,15 @@
 				<fire-bottle-discharge-armed type="bool">false</fire-bottle-discharge-armed>
 				<fire-bottle-discharge-cover type="bool">false</fire-bottle-discharge-cover>
 				<thrust-mode type="int">0</thrust-mode>
+                                <stop type="bool">false</stop>
+                                <ignition-arm type="int">0</ignition-arm>
 			</engine>
 			<engine>
 				<fire-bottle-discharge-armed type="bool">false</fire-bottle-discharge-armed>
 				<fire-bottle-discharge-cover type="bool">false</fire-bottle-discharge-cover>
 				<thrust-mode type="int">0</thrust-mode>
+                                <stop type="bool">false</stop>
+                                <ignition-arm type="int">0</ignition-arm>
 			</engine>
 		</engines>
 		<electric>

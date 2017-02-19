@@ -93,6 +93,36 @@ var wipers = [
 
 # Update loops.
 var fast_loop = Loop(0, func {
+
+        #ignition:
+        if(getprop("/controls/engines/engine[0]/ignition-arm")==2){
+            setprop("/controls/engines/engine[0]/ignition", 1);
+        }else{
+            setprop("/controls/engines/engine[0]/ignition", 0);
+        }
+        if(getprop("/controls/engines/engine[1]/ignition-arm")==2){
+            setprop("/controls/engines/engine[1]/ignition", 1);
+        }else{
+            setprop("/controls/engines/engine[1]/ignition", 0);
+        }
+        
+        #Lights
+        if(getprop("/systems/DC/outputs/nav-lights") or 0>=15){
+        setprop("/systems/DC/outputs/nav-lights-norm", 1);
+        }else{
+        setprop("/systems/DC/outputs/nav-lights-norm", 0);
+        }
+        if(getprop("/systems/DC/outputs/beacon") or 0>=15){
+        setprop("/systems/DC/outputs/beacon-norm", 1);
+        }else{
+        setprop("/systems/electrical/outputs/beacon-norm", 0);
+        }
+        if(getprop("/systems/DC/outputs/wing-ac-lights") or 0>=15){
+        setprop("/systems/DC/outputs/strobe-norm", 1);
+        }else{
+        setprop("/systems/DC/outputs/strobe-norm", 0);
+        }
+        
 	if (!is_slave)
 	{
 		# Engines and APU.

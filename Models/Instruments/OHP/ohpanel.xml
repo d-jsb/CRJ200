@@ -108,6 +108,136 @@
 			<z-m>0.136</z-m>
 		</center>
 	</animation>
+        <!--IDG Buttons-->
+	<animation>
+		<type>pick</type>
+		<object-name>IDG1Cover</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/idg1-cover</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>IDG1Cover</object-name>
+                <property>controls/electric/idg1-cover</property>
+                <factor>-100</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.0009</x-m>
+			<y-m>-0.183</y-m>
+			<z-m>0.11226</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>IDG1Btn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/idg1-disc</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IDG1Disc</object-name>
+		<condition>
+				<property>controls/electric/idg1-disc</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IDG1Fault</object-name>
+		<condition>
+				<property>controls/electric/idg1-fault</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>IDG2Cover</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/idg2-cover</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>IDG2Cover</object-name>
+                <property>controls/electric/idg2-cover</property>
+                <factor>-100</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.0009</x-m>
+			<y-m>-0.183</y-m>
+			<z-m>0.11226</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>IDG2Btn</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/idg2-disc</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IDG2Disc</object-name>
+		<condition>
+				<property>controls/electric/idg2-disc</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IDG2Fault</object-name>
+		<condition>
+				<property>controls/electric/idg2-fault</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>AcAltnBTN</object-name>
+		<object-name>AcAltnIND</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/ac-altn</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>AcAltnIND</object-name>
+		<condition>
+                    <property>controls/electric/ac-altn</property>
+		</condition>
+	</animation>
+        <!--Generators-->
 	<animation>
 		<type>pick</type>
 		<object-name>Gen1Switch</object-name>
@@ -116,7 +246,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/electric/engine[0]/generator</property>
+                                <property>controls/electric/engine[0]/generator</property>    
 			</binding>
 		</action>
 	</animation>
@@ -525,6 +655,7 @@
 		<type>pick</type>
 		<object-name>LFuelBtn</object-name>
 		<object-name>LFuelBtnOn</object-name>
+		<object-name>LFuelBtnINOP</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -538,6 +669,7 @@
 		<type>translate</type>
 		<object-name>LFuelBtn</object-name>
 		<object-name>LFuelBtnOn</object-name>
+		<object-name>LFuelBtnInop</object-name>
 		<property>consumables/fuel/tank[0]/selected</property>
 		<factor alias="../../button-translate-m" />
 		<axis>
@@ -554,9 +686,19 @@
 		</condition>
 	</animation>
 	<animation>
+		<type>select</type>
+		<object-name>LFuelBtnINOP</object-name>
+		<condition>
+			<property>consumables/fuel/tank[0]/empty</property>
+		</condition>
+	</animation>
+        
+        
+	<animation>
 		<type>pick</type>
 		<object-name>XflowBtn</object-name>
-		<object-name>XflowBtnOn</object-name>
+		<object-name>XflowOpen</object-name>
+		<object-name>XflowFail</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -569,7 +711,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name>XflowBtn</object-name>
-		<object-name>XflowBtnOn</object-name>
+		<object-name>XflowOpen</object-name>
+		<object-name>XflowFail</object-name>
 		<property>controls/fuel/gravity-xflow</property>
 		<factor alias="../../button-translate-m" />
 		<axis>
@@ -580,15 +723,25 @@
 	</animation>
 	<animation>
 		<type>select</type>
-		<object-name>XflowBtnOn</object-name>
+		<object-name>XflowOpen</object-name>
 		<condition>
 			<property>controls/fuel/gravity-xflow</property>
 		</condition>
 	</animation>
 	<animation>
+		<type>select</type>
+		<object-name>XflowFail</object-name>
+		<condition>
+			<property>controls/fuel/gravity-xflow-fail</property>
+		</condition>
+	</animation>
+        
+        
+	<animation>
 		<type>pick</type>
 		<object-name>RFuelBtn</object-name>
 		<object-name>RFuelBtnOn</object-name>
+		<object-name>RFuelBtnINOP</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -602,6 +755,7 @@
 		<type>translate</type>
 		<object-name>RFuelBtn</object-name>
 		<object-name>RFuelBtnOn</object-name>
+		<object-name>RFuelBtnInop</object-name>
 		<property>consumables/fuel/tank[1]/selected</property>
 		<factor alias="../../button-translate-m" />
 		<axis>
@@ -615,6 +769,13 @@
 		<object-name>RFuelBtnOn</object-name>
 		<condition>
 			<property>consumables/fuel/tank[1]/selected</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>RFuelBtnINOP</object-name>
+		<condition>
+			<property>consumables/fuel/tank[1]/empty</property>
 		</condition>
 	</animation>
 
@@ -671,6 +832,8 @@
 		<type>pick</type>
 		<object-name>APUFuelBtn</object-name>
 		<object-name>APUFuelBtnOn</object-name>
+		<object-name>APUFuelFeedSovFail</object-name>
+		<object-name>APUFuelPumpFail</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -685,6 +848,8 @@
 		<type>translate</type>
 		<object-name>APUFuelBtn</object-name>
 		<object-name>APUFuelBtnOn</object-name>
+		<object-name>APUFuelFeedSovFail</object-name>
+		<object-name>APUFuelPumpFail</object-name>
 		<property>controls/APU/electronic-control-unit</property>
 		<factor alias="../../button-translate-m" />
 		<axis>
@@ -695,15 +860,23 @@
 	</animation>
 	<animation>
 		<type>select</type>
-		<object-name>APUFuelBtnOn</object-name>
+		<object-name>APUFuelFeedSovFail</object-name>
 		<condition>
-			<property>controls/APU/electronic-control-unit</property>
+			<property>engines/apu/SOV-fail</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>APUFuelPumpFail</object-name>
+		<condition>
+			<property>engines/apu/pump-fail</property>
 		</condition>
 	</animation>
 	<animation>
 		<type>pick</type>
 		<object-name>APUStartBtn</object-name>
-		<object-name>APUStartBtnOn</object-name>
+		<object-name>APUStart</object-name>
+		<object-name>APUAvail</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -716,7 +889,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name>APUStartBtn</object-name>
-		<object-name>APUStartBtnOn</object-name>
+		<object-name>APUStart</object-name>
+		<object-name>APUAvail</object-name>
 		<property>controls/APU/off-on</property>
 		<factor alias="../../button-translate-m" />
 		<axis>
@@ -727,9 +901,21 @@
 	</animation>
 	<animation>
 		<type>select</type>
-		<object-name>APUStartBtnOn</object-name>
-		<condition>
+		<object-name>APUStart</object-name>
+                <condition>
+                    <and>
 			<property>controls/APU/off-on</property>
+                        <not>
+                            <property>engines/apu/running</property>
+                        </not>
+                    </and>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>APUAvail</object-name>
+		<condition>
+			<property>engines/apu/running</property>
 		</condition>
 	</animation>
 
@@ -774,11 +960,42 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-assign</command>
-				<property>controls/engines/engine[0]/starter</property>
-				<value type="bool">false</value>
+                            <command>property-assign</command>
+                            <property>controls/engines/engine[0]/starter</property>
+                            <value type="bool">false</value>
 			</binding>
+			<binding>
+                            <command>property-assign</command>
+                            <property>controls/engines/engine[0]/stop</property>
+                            <value type="bool">1</value>
+			</binding>
+                        <mod-up>
+                            <binding>
+                                <command>property-assign</command>
+                                <property>controls/engines/engine[0]/stop</property>
+                                <value type="bool">0</value>
+                            </binding>
+                        </mod-up>
 		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Eng1StopBtnOn</object-name>
+		<condition>
+                    <property>controls/engines/engine[0]/stop</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>Eng1StopBtn</object-name>
+		<object-name>Eng1StopBtnOn</object-name>
+                <property>controls/engines/engine[0]/stop</property>
+		<factor alias="../../button-translate-m" />
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
 	</animation>
 	<animation>
 		<type>pick</type>
@@ -816,6 +1033,7 @@
 	<animation>
 		<type>pick</type>
 		<object-name>Eng2StopBtn</object-name>
+		<object-name>Eng2StopBtnOn</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
@@ -824,9 +1042,197 @@
 				<property>controls/engines/engine[1]/starter</property>
 				<value type="bool">false</value>
 			</binding>
+			<binding>
+                            <command>property-assign</command>
+                            <property>controls/engines/engine[1]/stop</property>
+                            <value type="bool">true</value>
+			</binding>
+                        <mod-up>
+                            <binding>
+                                <command>property-assign</command>
+                                <property>controls/engines/engine[1]/stop</property>
+                                <value type="bool">false</value>
+                            </binding>
+                        </mod-up>
 		</action>
 	</animation>
-
+	<animation>
+		<type>select</type>
+		<object-name>Eng2StopBtnOn</object-name>
+		<condition>
+                    <property>controls/engines/engine[1]/stop</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>Eng2StopBtn</object-name>
+		<object-name>Eng2StopBtnOn</object-name>
+                <property>controls/engines/engine[1]/stop</property>
+		<factor alias="../../button-translate-m" />
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+        
+        <!--Ignition-->
+	<animation>
+		<type>pick</type>
+		<object-name>IgnA.ArmBtn</object-name>
+		<object-name>IgnA.Arm</object-name>
+		<object-name>IgnA.On</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/engines/engine[0]/ignition-arm</property>
+                                <value>0</value>
+                                <value>1</value>
+                                <value>2</value>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[0]/ignition-btn</property>
+			</binding>
+                        <mod-up>
+                            <binding>
+                                    <command>property-toggle</command>
+                                    <property>controls/engines/engine[0]/ignition-btn</property>
+                            </binding>
+                        </mod-up>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IgnA.Arm</object-name>
+		<condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/ignition-arm</property>
+                        <value>1</value>
+                    </equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IgnA.On</object-name>
+		<condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/ignition-arm</property>
+                        <value>2</value>
+                    </equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>IgnA.ArmBtn</object-name>
+		<object-name>IgnA.Arm</object-name>
+		<object-name>IgnA.On</object-name>
+                <property>controls/engines/engine[0]/ignition-btn</property>
+		<factor alias="../../button-translate-m" />
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+        
+        
+	<animation>
+		<type>pick</type>
+		<object-name>IgnB.ArmBtn</object-name>
+		<object-name>IgnB.Arm</object-name>
+		<object-name>IgnB.On</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>controls/engines/engine[1]/ignition-arm</property>
+                                <value>0</value>
+                                <value>1</value>
+                                <value>2</value>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[1]/ignition-btn</property>
+			</binding>
+                        <mod-up>
+                            <binding>
+                                    <command>property-toggle</command>
+                                    <property>controls/engines/engine[1]/ignition-btn</property>
+                            </binding>
+                        </mod-up>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IgnB.Arm</object-name>
+		<condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/ignition-arm</property>
+                        <value>1</value>
+                    </equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>IgnB.On</object-name>
+		<condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/ignition-arm</property>
+                        <value>2</value>
+                    </equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>IgnB.ArmBtn</object-name>
+		<object-name>IgnB.Arm</object-name>
+		<object-name>IgnB.On</object-name>
+                <property>controls/engines/engine[1]/ignition-btn</property>
+		<factor alias="../../button-translate-m" />
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+        <!--Continuous Ignition-->
+	<animation>
+		<type>pick</type>
+		<object-name>CONTBtn</object-name>
+		<object-name>CONTBtn.ON</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/cont-ignition</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>CONTBtn.ON</object-name>
+		<condition>
+                    <property>controls/engines/cont-ignition</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>CONTBtn</object-name>
+		<object-name>CONTBtn.ON</object-name>
+				<property>controls/engines/cont-ignition</property>
+		<factor alias="../../button-translate-m" />
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+        
 	<!-- Ram Air Turbine -->
 	<animation>
 		<type>pick</type>
