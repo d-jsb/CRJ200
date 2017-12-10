@@ -101,7 +101,7 @@
 		</offsets>
 	</model>
     <model>
-		<path>Aircraft/CRJ200/Models/Instruments/EICAS/eicas.xml</path>
+		<path>Aircraft/CRJ200/Models/Instruments/EICAS/eicasL.xml</path>
 		<overlay>
 			<params>
 				<page>instrumentation/eicas[0]/page</page>
@@ -313,7 +313,7 @@
 		</offsets>
 	</model>
     <model>
-		<path>Aircraft/CRJ200/Models/Instruments/EICAS/eicas.xml</path>
+		<path>Aircraft/CRJ200/Models/Instruments/EICAS/eicasR.xml</path>
 		<overlay>
 			<params>
 				<powerN>/systems/DC/outputs/eicas-disp</powerN>
@@ -789,9 +789,26 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/autoflight/autopilot/engage</property>
-				<value type="bool">false</value>
+				<property>it-autoflight/input/ap1</property>
+				<value>0</value>
 			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>it-autoflight/input/ap2</property>
+				<value>0</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/autopilot/disengage-pressed</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/autopilot/disengage-pressed</property>
+					<value>0</value>
+				</binding>
+			</mod-up>
 		</action>
 	</animation>
     <animation>
@@ -2614,7 +2631,7 @@
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/eicas[1]/page</property>
-				<value>1</value>
+				<value>primary</value>
 			</binding>
 		</action>
 		<hovered><binding>
@@ -2632,7 +2649,7 @@
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/eicas[1]/page</property>
-				<value>2</value>
+				<value>status</value>
 			</binding>
 		</action>
 		<hovered><binding>
@@ -2641,7 +2658,7 @@
 			<label>EICAS Status</label>
 		</binding></hovered>		
 	</animation>
-    <!--animation>
+    <animation>
 		<type>pick</type>
 		<object-name>EICAS_ECS</object-name>
 		<action>
@@ -2650,7 +2667,7 @@
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/eicas[1]/page</property>
-				<value>3</value>
+				<value>ecs</value>
 			</binding>
 		</action>
 		<hovered><binding>
@@ -2658,7 +2675,7 @@
 			<tooltip-id>EP_ECS</tooltip-id>
 			<label>EICAS ECS</label>
 		</binding></hovered>		
-	</animation-->
+</animation>
     <animation>
 		<type>pick</type>
 		<object-name>EICAS_Hyd</object-name>
@@ -2668,7 +2685,7 @@
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/eicas[1]/page</property>
-				<value>4</value>
+				<value>hydraulics</value>
 			</binding>
 		</action>
 		<hovered><binding>
@@ -2684,10 +2701,9 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-cycle</command>
+				<command>property-assign</command>
 				<property>instrumentation/eicas[1]/page</property>
-				<value>5</value>
-				<value>6</value>
+				<value>electrical</value>
 			</binding>
 		</action>
 		<hovered><binding>
@@ -2696,7 +2712,7 @@
 			<label>EICAS Electrical</label>
 		</binding></hovered>		
 	</animation>
-	<!--
+	
 	<animation>
 		<type>pick</type>
 		<object-name>EICAS_Fuel</object-name>
@@ -2706,7 +2722,7 @@
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/eicas[1]/page</property>
-				<value>7</value>
+				<value>fuel</value>
 			</binding>
 		</action>
 		<hovered><binding>
@@ -2714,26 +2730,8 @@
 			<tooltip-id>EP_Fuel</tooltip-id>
 			<label>EICAS Fuel</label>
 		</binding></hovered>		
-	</animation>
-	<animation>
-		<type>pick</type>
-		<object-name>EICAS_FCTL</object-name>
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>
-			<binding>
-				<command>property-assign</command>
-				<property>instrumentation/eicas[1]/page</property>
-				<value>8</value>
-			</binding>
-		</action>
-		<hovered><binding>
-			<command>set-tooltip</command>
-			<tooltip-id>EP_FCTL</tooltip-id>
-			<label>EICAS Flight Controlls</label>
-		</binding></hovered>		
 	</animation>	
-	<animation>
+	<!--<animation>
 		<type>pick</type>
 		<object-name>EICAS_AICE</object-name>
 		<action>
@@ -2752,6 +2750,24 @@
 		</binding></hovered>		
 	</animation>
 	-->	
+	<animation>
+		<type>pick</type>
+		<object-name>EICAS_FCTL</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/eicas[1]/page</property>
+				<value>fctl</value>
+			</binding>
+		</action>
+		<hovered><binding>
+			<command>set-tooltip</command>
+			<tooltip-id>EP_FCTL</tooltip-id>
+			<label>EICAS Flight Controls</label>
+		</binding></hovered>		
+	</animation>
     <animation>
 		<type>pick</type>
 		<object-name>EICAS_Doors</object-name>
@@ -2761,7 +2777,7 @@
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/eicas[1]/page</property>
-				<value>10</value>
+				<value>doors</value>
 			</binding>
 		</action>
 		<hovered><binding>

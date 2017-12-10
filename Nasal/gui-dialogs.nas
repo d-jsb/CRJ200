@@ -1,9 +1,9 @@
 ## Aircraft-specific dialogs
-var aircraft_path = "Aircraft/CRJ700-family/"~"Dialogs/";
+var aircraft_path = "Aircraft/CRJ200/"~"Dialogs/";
 var dialogs = {
     adc: gui.Dialog.new("sim/gui/dialogs/adc/dialog", aircraft_path~"adc-dlg.xml"),
     apdev: gui.Dialog.new("sim/gui/dialogs/apdev/dialog", aircraft_path~"autopilot-dev-dlg.xml"),
-    autopilot: gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", aircraft_path~"autopilot-dlg.xml"),
+   # autopilot: gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", aircraft_path~"autopilot-dlg.xml"),
     autothrottle: gui.Dialog.new("sim/gui/dialogs/autothrottle/dialog", aircraft_path~"autothrottle-dlg.xml"),
     config: gui.Dialog.new("sim/gui/dialogs/config-crj700/dialog", aircraft_path~"config-dlg.xml"),
     debug: gui.Dialog.new("sim/gui/dialogs/debug/dialog", aircraft_path~"debug-dlg.xml"),
@@ -17,6 +17,11 @@ var dialogs = {
     tiller: gui.Dialog.new("sim/gui/dialogs/tiller/dialog", aircraft_path~"tiller-dlg.xml"),
     viewselect: gui.Dialog.new("sim/gui/dialogs/views-crj700/dialog", aircraft_path~"viewselect-dlg.xml"),
 };
-gui.menuBind("autopilot", "CRJ700.dialogs.autopilot.open();");
-gui.menuBind("radio", "CRJ700.dialogs.radio.open();");
+#gui.menuBind("autopilot", "CRJ200.dialogs.autopilot.open();");
+gui.menuBind("radio", "CRJ200.dialogs.radio.open();");
 dialogs.eicas.open();
+
+var ap_settings = gui.Dialog.new("/sim/gui/dialogs/autopilot/dialog",
+        "Aircraft/CRJ200/Systems/autopilot-dlg.xml");
+
+gui.menuBind("autopilot-settings", "dialogs.ap_settings.open()");

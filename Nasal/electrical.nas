@@ -209,7 +209,7 @@ var ACext = {
 			if  (me.parking_brake < me.gear_cnt) me.parking_brake += 1;
 		}
 		else if (me.parking_brake > 0) me.parking_brake -= 1;
-		if (me.parking_brake) {
+		if (me.parking_brake and getprop("velocities/groundspeed-kt")<=1 ) {
 			setprop("controls/electric/ac-service-avail", 1);
 		}			
 		else {

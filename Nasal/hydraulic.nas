@@ -128,15 +128,15 @@ print("Creating hydraulic system ...");
 var hydraulics = [ 
 	HydraulicSystem.new(0,
 		["rudder", "elevator", "aileron"],
-		["ob-spoileron", "ob-flight-spoiler", "ob-ground-spoiler", "left-reverser"],
+		["l-spoileron", "ob-flight-spoiler", "ob-ground-spoiler", "left-reverser"],
 	),
 	HydraulicSystem.new(1,
 		["rudder", "elevator", "aileron"], 
-		["ib-spoileron", "ib-flight-spoiler", "landing-gear-alt", "right-reverser", "ob-brakes"],
+		["r-spoileron", "ib-flight-spoiler", "landing-gear-alt", "right-reverser", "ob-brakes"],
 	),
 	HydraulicSystem.new(2,
 		["rudder", "elevator", "aileron"], 
-		["ib-ground-spoiler", "landing-gear", "nwsteering", "ib-brakes"],
+		["ib-ground-spoiler", "landing-gear", "nwsteering", "ib-brakes","lr-spoileron"],
 	),
 ];
 

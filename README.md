@@ -12,4 +12,4 @@ JcHnd and Nick I
 
 This aircraft is obviously made for Flightgear, the free and open-source flight simulator, downloadable on flightgear.org.
 
-I hope I'm not making anybody angry by merging his work into this project, if you want me to change some things or find licensing issues, please send me an email at echoair - at - t-online.de or a PM over forum.flightgear.org (username: D-ECHO).
+I hope I'm not making anybody angry by merging his work into this project, if you want me to change some things or find licensing issues, please send me a PM over forum.flightgear.org (username: D-ECHO).

@@ -202,7 +202,7 @@
 		<binding>
 			<command>nasal</command>
 			<script>
-				CRJ700.dialogs.tiller.open();
+				CRJ200.dialogs.tiller.open();
 			</script>
 		</binding>
 	</key>
@@ -217,13 +217,32 @@
 			<value>0</value>
 		</binding>
 	</key>
-	<key n="6">
-		<name>Ctrl-F</name>
-		<desc>Engage/disengage autopilot</desc>
+	<key n="113">
+		<name>q</name>
+		<desc>Disengage Autopilot</desc>
+		<repeatable type="bool">true</repeatable>
 		<binding>
-			<command>property-toggle</command>
-			<property>controls/autoflight/autopilot/engage</property>
+		<command>property-assign</command>
+		<property>it-autoflight/input/ap1</property>
+		<value>0</value>
 		</binding>
+		<binding>
+		<command>property-assign</command>
+		<property>it-autoflight/input/ap2</property>
+		<value>0</value>
+		</binding>
+		<binding>
+		<command>property-assign</command>
+		<property>/controls/autopilot/disengage-pressed</property>
+		<value>1</value>
+		</binding>
+		<mod-up>
+		<binding>
+		<command>property-assign</command>
+		<property>/controls/autopilot/disengage-pressed</property>
+		<value>0</value>
+		</binding>
+		</mod-up>
 	</key>
 	<key n="7">
 		<name>Ctrl-G</name>
@@ -371,14 +390,12 @@
 		</binding>
 	</key>-->
 	<!-- GUI -->
-	<key n="268">
-		<name>F12</name>
-		<desc>Pop up radio settings dialog</desc>
+	<key n="267">
+		<name>F11</name>
+		<desc>Pop up autopilot dialog</desc>
 		<binding>
-			<command>nasal</command>
-			<script>
-				CRJ700.dialogs.radio.open();
-			</script>
+		<command>nasal</command>
+		<script>CRJ200.ap_settings.toggle()</script>
 		</binding>
 	</key>
 </PropertyList>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Bombardier CRJ700 series -->
+<!-- Bombardier CRJ200 series -->
 <!-- Flight controls -->
 
 <PropertyList>
@@ -14,13 +14,13 @@
 		<enable>
 			<condition>
 				<and>
-					<property>autopilot/internal/autoflight-engaged</property>
+					<property>it-autoflight/input/ap1</property>
 					<property>systems/hydraulic/outputs/aileron</property>
 				</and>				
 			</condition>
 		</enable>
 		<input>
-			<property>fcs/autopilot/aileron-cmd-norm</property>
+			<property>it-autoflight/internal/aileron-cmd</property>
 		</input>
 		<output>fcs/aileron-cmd-norm</output>
 	</filter>
@@ -288,6 +288,24 @@
 
 	<!-- Elevators -->
 	<filter>
+		<name>Autopilot elevator controller</name>
+		<type>gain</type>
+		<debug type="bool">false</debug>
+		<gain>1</gain>
+		<enable>
+			<condition>
+				<and>
+					<property>autopilot/internal/autoflight-engaged</property>
+					<property>systems/hydraulic/outputs/elevator</property>
+				</and>				
+			</condition>
+		</enable>
+		<input>
+			<property>fcs/autopilot/elevator-cmd-norm</property>
+		</input>
+		<output>fcs/elevator-cmd-norm</output>
+	</filter>
+	<filter>
 		<name>Pilot elevator controller</name>
 		<type>gain</type>
 		<debug type="bool">false</debug>
@@ -296,6 +314,9 @@
 			<condition>
 				<and>
 					<property>systems/hydraulic/outputs/elevator</property>
+					<not>
+						<property>autopilot/internal/autoflight-engaged</property>
+					</not>
 					<or>
 						<not>
 							<property>fcs/copilot/active</property>
@@ -988,6 +1009,16 @@
 	</filter>
 	
 	<filter>
+		<name>Connect tiller-steer-deg</name>
+		<type>gain</type>
+		<debug type="bool">false</debug>
+		<gain>80</gain>
+		<input>
+			<property>controls/gear/tiller-cmd-norm</property>
+		</input>
+		<output>controls/gear/tiller-steer-deg</output>
+	</filter>
+	<filter>
 		<name>Pilot nose gear tiller steer</name>
 		<type>gain</type>
 		<debug type="bool">false</debug>
@@ -1108,6 +1139,16 @@
 		</input>
 		<output>controls/gear/tiller-steer-deg</output>
 		<output>fcs/nose-gear-steer-deg</output>
+	</filter>
+	<filter>
+		<name>Nose gear normalize output</name>
+		<type>gain</type>
+		<debug type="bool">false</debug>
+		<gain>0.0125</gain>
+		<input>
+			<property>/fcs/nose-gear-steer-deg</property>
+		</input>
+		<output>fcs/nose-gear-steer-norm</output>
 	</filter>
 
 	<!-- gear hydraulic -->

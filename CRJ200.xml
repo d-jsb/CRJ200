@@ -150,7 +150,7 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
 
 
        <gear x="10.09746"  y="0.00" z="-1.75465" compression="0.15" spring="0.2" damp="2">
-          <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+          <control-input axis="/fcs/nose-gear-steer-norm" control="STEER" square="true"/>
           <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
           <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
           <control-speed control="EXTEND" transition-time="7"/>

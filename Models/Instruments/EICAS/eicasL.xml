@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>eicasL.ac</path>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>ScreenL</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>canvas_eicas.showEICASL();</script>
+			</binding>
+		</action>
+	</animation>
+
+</PropertyList>

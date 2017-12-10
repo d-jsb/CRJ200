@@ -934,8 +934,8 @@
   <object-name>ngstrut</object-name>
   <object-name>ngltorque</object-name>
   <object-name>ngutorque</object-name>
-  <property>surface-positions/rudder-pos-norm</property>
-  <factor>-50</factor>
+  <property>gear/gear/steering-norm</property>
+  <factor>-80</factor>
   <center>
    <x-m>-10.1</x-m>
    <y-m>0.0</y-m>
