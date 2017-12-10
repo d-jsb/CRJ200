@@ -272,6 +272,36 @@
 			<z-m>0.054</z-m>
 		</center>
 	</animation>
+	
+	
+	
+	<animation>
+		<type>knob</type>
+		<object-name>DecisionHeightKnob</object-name>
+		<property>instrumentation/pfd[0]/dh</property>
+		<factor>3</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.0018</y-m>
+			<z-m>0.0108</z-m>
+		</center>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adc/reference/dh</property>
+				<min>0</min>
+				<max>950</max>
+				<factor>50</factor>
+			</binding>
+		</action>
+	</animation>
 
 	<!-- Lightmaps -->
 	<effect>

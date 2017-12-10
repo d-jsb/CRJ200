@@ -1279,6 +1279,12 @@
 		<canvas_eicas>
 			<file>Aircraft/CRJ200/Models/Instruments/EICAS/EICAS.nas</file>
 		</canvas_eicas>
+		<canvas_eicas_2>
+			<file>Aircraft/CRJ200/Models/Instruments/EICAS/EICAS2.nas</file>
+		</canvas_eicas_2>
+		<canvas_pfd>
+			<file>Aircraft/CRJ200/Models/Instruments/PFD/pfdL.nas</file>
+		</canvas_pfd>
 		<controls>
 			<file>Aircraft/CRJ200/Nasal/controls.nas</file>
 		</controls>

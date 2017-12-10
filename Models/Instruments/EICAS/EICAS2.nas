@@ -15,8 +15,8 @@ var EICAS_hydraulics = nil;
 var EICAS_doors = nil;
 var EICAS_fctl = nil;
 var EICAS_ecs = nil;
-var page = "primary";
-setprop("instrumentation/eicas[0]/page", "primary");
+var page = "electrical";
+setprop("instrumentation/eicas[1]/page", "electrical");
 setprop("/systems/electrical/extra/apu-load", 0);
 setprop("/systems/electrical/extra/apu-volts", 0);
 setprop("/systems/electrical/extra/apu-hz", 0);
@@ -91,7 +91,7 @@ var canvas_EICAS_base = {
 	update: func() {
 		#EICAS is powered by the DC 1 Bus
 		if (getprop("/systems/DC/outputs/eicas-disp")>22) {
-			page = getprop("instrumentation/eicas[0]/page");
+			page = getprop("instrumentation/eicas[1]/page");
 			if (page == "primary") {
 				EICAS_primary.page.show();
 				EICAS_status.page.hide();
@@ -1091,7 +1091,7 @@ setlistener("sim/signals/fdm-initialized", func {
 		"view": [1024, 1280],
 		"mipmapping": 1
 	});
-	EICAS_display.addPlacement({"node": "ScreenL"});
+	EICAS_display.addPlacement({"node": "ScreenR"});
 	
 	var groupPrimary = EICAS_display.createGroup();
 	var groupStatus = EICAS_display.createGroup();

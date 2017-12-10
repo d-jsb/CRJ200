@@ -23,7 +23,7 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
     <airplane mass="30900">
 
     <!-- Approach configuration -->
-       <approach speed="120" aoa="3" fuel=".2">
+       <approach speed="120" aoa="4" fuel=".2">
           <control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.2"/>
           <control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.2"/>
           <control-setting axis="/controls/flight/flaps" value="1.0"/>
@@ -78,8 +78,7 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
 		<spoiler start="0.18" end="0.94" lift="0.0" drag="10.0" />
 		<control-input axis="/controls/flight/flaps" control="FLAP0" />
 		<control-input axis="/surface-positions/spoiler-ground-pos-norm" control="SPOILER" />
-		<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm" />
-		<control-output control="SLAT" prop="/surface-positions/slat-pos-norm" />
+		<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm" />>
 		<control-output control="SPOILER" side="left" prop="/surface-positions/fdm-spoiler-inner-pos-norm" />
 		<control-speed control="FLAP0" transition-time="40.0" />
 		<control-speed control="SPOILER" transition-time="0.7" />
@@ -94,7 +93,6 @@ Mach 1 = 576.6 kt @ 35,000 ft -->
 		<control-input axis="/controls/flight/flaps" control="FLAP0" />
 		<control-input axis="/fcs/aileron-cmd-norm" control="FLAP1" split="true" />
 		<control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true" />
-		<control-input axis="/controls/flight/flaps" control="SLAT" />
 		<control-input axis="/controls/flight/speedbrake" control="SPOILER" />
 		<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm" />
 		<control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm" />

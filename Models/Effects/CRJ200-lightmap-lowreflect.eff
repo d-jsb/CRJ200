@@ -10,10 +10,19 @@
 			<filter>linear-mipmap-linear</filter>
 			<internal-format>normalized</internal-format>
 		</texture>
-		<!-- Reflection -->
+		<!-- Reflection --><!--
 		<reflection-enabled type="int">1</reflection-enabled>
 		<reflection-correction type="float">-1</reflection-correction>
         <ambient-correction type="float">0.2</ambient-correction>
-		<reflection-dynamic type="int">1</reflection-dynamic>
+		<reflection-dynamic type="int">1</reflection-dynamic>-->
+        <reflection-enabled type="int"><use>/sim/model/rendering/reflection-enabled</use></reflection-enabled>
+        <reflection-type type="int"><use>/sim/model/rendering/reflection-type</use></reflection-type>
+        <reflection-correction type="float">0.1</reflection-correction>
+        <reflection-fresnel type="float"><use>/sim/model/rendering/reflection-fresnel</use></reflection-fresnel>
+        <reflection-fresnel-factor type="float"><use>/sim/model/rendering/reflection-fresnel-factor</use></reflection-fresnel-factor>
+        <reflection-rainbow type="float">0</reflection-rainbow>
+        <reflection-noise type="float"><use>/sim/model/rendering/reflection-noise</use></reflection-noise>
+        <reflection-dynamic type="int"><use>/sim/model/rendering/reflection-dynamic</use></reflection-dynamic>
+        <ambient-correction type="float">0</ambient-correction>
 	</parameters>
 </PropertyList>

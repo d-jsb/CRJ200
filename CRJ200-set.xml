@@ -22,7 +22,6 @@
 			<position-z-m type="float">-1.796</position-z-m>
 			<jetway-hood-deg type="float">3</jetway-hood-deg>
 		</door>
-				<has-slats type="bool">true</has-slats>
 				<limits>
 					<mtow-rw-m>1564</mtow-rw-m>
 					<mlw-rw-m>1536</mlw-rw-m>
@@ -32,7 +31,18 @@
 				<dimensions>
 					<nose-distance-m>16</nose-distance-m>
 					<cockpit-offset-x>0</cockpit-offset-x>
-				</dimensions>	
+				</dimensions>
+				<rendering>
+					<reflection-enabled type="int">1</reflection-enabled>
+					<reflection-type type="int">2</reflection-type>
+					<reflection-dynamic type="int">1</reflection-dynamic>
+					<reflection-correction type="float">0.3</reflection-correction>
+					<reflection-fresnel type="float">0.5</reflection-fresnel>
+					<reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
+					<reflection-rainbow type="float">0.1</reflection-rainbow>
+					<reflection-noise type="float">0.05</reflection-noise>
+					<ambient-correction type="float">0.15</ambient-correction>
+				</rendering>	
 			</model>
 		
 			<sound>
