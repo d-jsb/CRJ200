@@ -75,19 +75,7 @@
 		</offsets>
 	</model>
     <model>
-		<path>Aircraft/CRJ200/Models/Instruments/MFD/mfd.xml</path>
-		<overlay>
-			<params>
-				<powerN>/systems/DC/outputs/mfd1</powerN>
-				<page>instrumentation/mfd[0]/page</page>
-				<tcas>instrumentation/mfd[0]/tcas</tcas>
-				<wx>instrumentation/mfd[0]/wx</wx>
-				<indicated-heading-deg>instrumentation/heading-indicator[0]/indicated-heading-deg</indicated-heading-deg>
-				<true-airspeed-kt>instrumentation/airspeed-indicator[0]/true-speed-kt</true-airspeed-kt>
-				<radar-range>instrumentation/efis/inputs/range</radar-range>
-				<lightmap-texture-path>Aircraft/CRJ200/Models/Effects/Lightmaps/mfd-left-lightmap.png</lightmap-texture-path>
-			</params>
-		</overlay>
+		<path>Aircraft/CRJ200/Models/Instruments/MFD/MFD_L.xml</path>
 		<offsets>
 			<!--
 				<x-m>-1.896</x-m>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Bombardier CRJ200 series -->
+<!-- Bombardier CRJ700 series -->
 <!-- Flight controls -->
 
 <PropertyList>
@@ -14,13 +14,13 @@
 		<enable>
 			<condition>
 				<and>
-					<property>it-autoflight/input/ap1</property>
+					<property>autopilot/internal/autoflight-engaged</property>
 					<property>systems/hydraulic/outputs/aileron</property>
 				</and>				
 			</condition>
 		</enable>
 		<input>
-			<property>it-autoflight/internal/aileron-cmd</property>
+			<property>fcs/autopilot/aileron-cmd-norm</property>
 		</input>
 		<output>fcs/aileron-cmd-norm</output>
 	</filter>
@@ -288,24 +288,6 @@
 
 	<!-- Elevators -->
 	<filter>
-		<name>Autopilot elevator controller</name>
-		<type>gain</type>
-		<debug type="bool">false</debug>
-		<gain>1</gain>
-		<enable>
-			<condition>
-				<and>
-					<property>autopilot/internal/autoflight-engaged</property>
-					<property>systems/hydraulic/outputs/elevator</property>
-				</and>				
-			</condition>
-		</enable>
-		<input>
-			<property>fcs/autopilot/elevator-cmd-norm</property>
-		</input>
-		<output>fcs/elevator-cmd-norm</output>
-	</filter>
-	<filter>
 		<name>Pilot elevator controller</name>
 		<type>gain</type>
 		<debug type="bool">false</debug>
@@ -314,9 +296,6 @@
 			<condition>
 				<and>
 					<property>systems/hydraulic/outputs/elevator</property>
-					<not>
-						<property>autopilot/internal/autoflight-engaged</property>
-					</not>
 					<or>
 						<not>
 							<property>fcs/copilot/active</property>
@@ -902,6 +881,7 @@
 			</u_max>
 		</config>
 	</pid-controller>
+  
 	<!-- 3 : Max -->
 	<!-- Keeps throttles at 100% power -->
 	<filter>
@@ -922,15 +902,16 @@
 		</input>
 		<output>fcs/throttle-cmd-norm[0]</output>
 	</filter>
+  
 	<filter>
-		<name>Engine 1 maximum controller</name>
+		<name>Engine 2 maximum controller</name>
 		<type>gain</type>
 		<debug type="bool">false</debug>
 		<gain>1</gain>
 		<enable>
 			<condition>
 				<equals>
-					<property>controls/engines/engine[0]/thrust-mode</property>
+					<property>controls/engines/engine[1]/thrust-mode</property>
 					<value>3</value>
 				</equals>
 			</condition>
@@ -952,9 +933,7 @@
 		<enable>
 			<condition>
 				<and>
-					<not>
-						<property>sim/config/rudder-to-tiller</property>
-					</not>
+					<property>gear/gear[0]/wow</property>
 					<less-than-equals>
 						<expression>
 							<abs>
@@ -964,10 +943,18 @@
 						<value>8</value>
 					</less-than-equals>
 					<or>
+						<not>
+							<property>sim/config/rudder-to-tiller</property>
+						</not>
+						<greater-than>
+							<property>/velocities/groundspeed-kt</property>
+							<value>20</value>
+						</greater-than>
+					</or>
+					<or>
 						<property>sim/model/pushback/linked</property>
 						<property>controls/gear/enable-tiller</property>
 					</or>
-					<property>gear/gear[0]/wow</property>
 				</and>
 			</condition>
 		</enable>
@@ -986,6 +973,7 @@
 			<condition>
 				<and>
 					<property>sim/config/rudder-to-tiller</property>
+					<property>gear/gear[0]/wow</property>
 					<less-than-equals>
 						<expression>
 							<abs>
@@ -998,7 +986,10 @@
 						<property>sim/model/pushback/linked</property>
 						<property>controls/gear/enable-tiller</property>
 					</or>
-					<property>gear/gear[0]/wow</property>
+					<less-than-equals>
+						<property>/velocities/groundspeed-kt</property>
+						<value>20</value>
+					</less-than-equals>
 				</and>
 			</condition>
 		</enable>
@@ -1008,16 +999,6 @@
 		<output>fcs/tiller-steer-deg</output>
 	</filter>
 	
-	<filter>
-		<name>Connect tiller-steer-deg</name>
-		<type>gain</type>
-		<debug type="bool">false</debug>
-		<gain>80</gain>
-		<input>
-			<property>controls/gear/tiller-cmd-norm</property>
-		</input>
-		<output>controls/gear/tiller-steer-deg</output>
-	</filter>
 	<filter>
 		<name>Pilot nose gear tiller steer</name>
 		<type>gain</type>
@@ -1139,16 +1120,6 @@
 		</input>
 		<output>controls/gear/tiller-steer-deg</output>
 		<output>fcs/nose-gear-steer-deg</output>
-	</filter>
-	<filter>
-		<name>Nose gear normalize output</name>
-		<type>gain</type>
-		<debug type="bool">false</debug>
-		<gain>0.0125</gain>
-		<input>
-			<property>/fcs/nose-gear-steer-deg</property>
-		</input>
-		<output>fcs/nose-gear-steer-norm</output>
 	</filter>
 
 	<!-- gear hydraulic -->

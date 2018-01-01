@@ -124,13 +124,13 @@
 			<electrical>
 				<path></path>
 			</electrical>
-			<autopilot>
-				<path>Aircraft/CRJ200/Systems/it-autoflight.xml</path>
-			</autopilot>
 			<!--<autopilot>
+				<path>Aircraft/CRJ200/Systems/it-autoflight.xml</path>
+			</autopilot>-->
+			<autopilot>
 				<name>Autopilot</name>
 				<path>Aircraft/CRJ200/Systems/CRJ200-autopilot.xml</path>
-			</autopilot>-->
+			</autopilot>
 			<autopilot>
 				<name>Flight control system</name>
 				<path>Aircraft/CRJ200/Systems/CRJ200-flight-controls.xml</path>
@@ -452,6 +452,38 @@
 			</generic>
 		</multiplay>
 	</sim>
+	
+	<autopilot>
+		<flight-director-serviceable type="bool">true</flight-director-serviceable>
+		<autoflight-serviceable type="bool">true</autoflight-serviceable>
+		<yaw-damper-serviceable type="bool">true</yaw-damper-serviceable>
+		<annunciators>
+			<lat-armed></lat-armed>
+			<vert-armed type="bool">1</vert-armed>
+			<lat-capture>ROLL</lat-capture>
+			<vert-capture>PTCH</vert-capture>
+			<altitude-flash type="bool">false</altitude-flash>
+		</annunciators>
+		<route-manager>
+			<vnav>
+				<climb-speed-kt type="int">400</climb-speed-kt>
+				<descent-speed-kt type="int">300</descent-speed-kt>
+				<climb-vpa-deg type="double">4</climb-vpa-deg>
+				<descent-vpa-deg type="double">3</descent-vpa-deg>
+				<target-altitude-ft type="double">0</target-altitude-ft>
+			</vnav>
+		</route-manager>
+		<ref>
+			<roll-deg type="float">0</roll-deg>
+			<roll-hdg type="float">0</roll-hdg>
+			<alt-hold type="int">0</alt-hold>
+		</ref>
+		<internal>
+			<target-roll-deg>0</target-roll-deg>
+			<target-pitch-deg>0</target-pitch-deg>
+			<target-climb-rate-fpm>0</target-climb-rate-fpm>
+		</internal>
+	</autopilot>
 	
 	<it-autoflight>
 		<config>
@@ -1273,9 +1305,9 @@
 			
 <!--			<file>Aircraft/CRJ200/Nasal/messages.nas</file>-->
 		</CRJ200>
-		<itaf>
+		<!--<itaf>
 			<file>Aircraft/CRJ200/Nasal/it-autoflight.nas</file>
-		</itaf>
+		</itaf>-->
 		<canvas_eicas>
 			<file>Aircraft/CRJ200/Models/Instruments/EICAS/EICAS.nas</file>
 		</canvas_eicas>
@@ -1285,6 +1317,9 @@
 		<canvas_pfd>
 			<file>Aircraft/CRJ200/Models/Instruments/PFD/pfdL.nas</file>
 		</canvas_pfd>
+		<canvas_mfd>
+			<file>Aircraft/CRJ200/Models/Instruments/MFD/canvas/ND.nas</file>
+		</canvas_mfd>
 		<controls>
 			<file>Aircraft/CRJ200/Nasal/controls.nas</file>
 		</controls>
