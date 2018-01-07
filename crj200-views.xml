@@ -20,7 +20,7 @@
 			<from-model type="bool">true</from-model>
 			<x-offset-m archive="y">0</x-offset-m>
 			<y-offset-m archive="y">-0.468</y-offset-m>
-			<z-offset-m archive="y">-2.0</z-offset-m>
+			<z-offset-m archive="y">-1.705</z-offset-m>
 		</config>
 	</view>	
 	<view n="101">
@@ -41,11 +41,11 @@
 		<config>
 			<from-model type="bool">true</from-model>
 			<x-offset-m>0</x-offset-m>
-			<y-offset-m>-0.468</y-offset-m>
-			<z-offset-m>-13.35</z-offset-m>
-			<pitch-offset-deg archive="y">59.2</pitch-offset-deg>
+			<y-offset-m>1.2</y-offset-m>
+			<z-offset-m>-9.35</z-offset-m>
+			<pitch-offset-deg archive="y">63.2</pitch-offset-deg>
 			<heading-offset-deg>0</heading-offset-deg>
-			<default-field-of-view-deg type="double"  archive="y">85.3</default-field-of-view-deg>
+			<default-field-of-view-deg type="double"  archive="y">83.4</default-field-of-view-deg>
 		</config>
 		<limits>
 			<enabled type="bool">true</enabled>
@@ -64,8 +64,8 @@
 		<config>
 			<from-model type="bool">true</from-model>
 			<x-offset-m>0</x-offset-m>
-			<y-offset-m>-0.468</y-offset-m>
-			<z-offset-m>-13.35</z-offset-m>
+			<y-offset-m>1.3</y-offset-m>
+			<z-offset-m>-9.35</z-offset-m>
 			<pitch-offset-deg>-55</pitch-offset-deg>
 			<heading-offset-deg>0</heading-offset-deg>
 			<default-field-of-view-deg type="double">56</default-field-of-view-deg>
@@ -87,9 +87,9 @@
 		<config>
 			<from-model type="bool">true</from-model>
 			<x-offset-m>0</x-offset-m>
-			<y-offset-m>-0.97</y-offset-m>
-			<z-offset-m>-13.28</z-offset-m>
-			<pitch-offset-deg>-64</pitch-offset-deg>
+			<y-offset-m>0.9</y-offset-m>
+			<z-offset-m>-9.25</z-offset-m>
+			<pitch-offset-deg>-62.5</pitch-offset-deg>
 			<heading-offset-deg>0</heading-offset-deg>
 			<default-field-of-view-deg type="double">77</default-field-of-view-deg>
 		</config>
