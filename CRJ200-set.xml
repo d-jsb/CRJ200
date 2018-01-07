@@ -1,49 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-<!-- Bombardier CRJ200 series -->
-<!-- Aircraft property settings specific to the CRJ200 -->
+<!-- Bombardier CRJ200 LR -->
 
 <PropertyList include="CRJ200-main.xml">
 	<sim include="crj200-views.xml">
-		<description>Bombardier CRJ200</description>
+		<description>Bombardier CRJ200 LR</description>
 		<author>Joshua Wilson/Nick I (updated by D-ECHO using parts of the CRJ700-family by Ryan Miller, Henning S.)</author>
 		<status>production</status>
 		<aircraft-version>3</aircraft-version>
-			
 		<flight-model>yasim</flight-model>
 		<aero>CRJ200</aero>
 
 		<model>
-		<path>Aircraft/CRJ200/Models/CRJ200.xml</path>
-		<variant type="int">0</variant>
-		<door>
-			<position-x-m type="float">-11.519</position-x-m>
-			<position-y-m type="float">-1.139</position-y-m>
-			<position-z-m type="float">-1.796</position-z-m>
-			<jetway-hood-deg type="float">3</jetway-hood-deg>
-		</door>
-				<limits>
-					<mtow-rw-m>1564</mtow-rw-m>
-					<mlw-rw-m>1536</mlw-rw-m>
-					<mtow-lb>72750</mtow-lb>
-					<mlw-lb>67000</mlw-lb>
-				</limits>
-				<dimensions>
-					<nose-distance-m>16</nose-distance-m>
-					<cockpit-offset-x>0</cockpit-offset-x>
-				</dimensions>
-				<rendering>
-					<reflection-enabled type="int">1</reflection-enabled>
-					<reflection-type type="int">2</reflection-type>
-					<reflection-dynamic type="int">1</reflection-dynamic>
-					<reflection-correction type="float">0.3</reflection-correction>
-					<reflection-fresnel type="float">0.5</reflection-fresnel>
-					<reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
-					<reflection-rainbow type="float">0.1</reflection-rainbow>
-					<reflection-noise type="float">0.05</reflection-noise>
-					<ambient-correction type="float">0.15</ambient-correction>
-				</rendering>	
-			</model>
+            <path>Aircraft/CRJ200/Models/CRJ200.xml</path>
+            <variant type="int">0</variant>
+            <door>
+                <position-x-m type="float">-11.519</position-x-m>
+                <position-y-m type="float">-1.139</position-y-m>
+                <position-z-m type="float">-1.796</position-z-m>
+                <jetway-hood-deg type="float">3</jetway-hood-deg>
+            </door>
+            <limits>
+                <mtow-rw-m>1918</mtow-rw-m>
+                <mlw-rw-m>1479</mlw-rw-m>
+                <mtow-lb>53000</mtow-lb>
+                <mlw-lb>47000</mlw-lb>
+            </limits>
+            <dimensions>
+                <nose-distance-m>12</nose-distance-m>
+                <cockpit-offset-x>3.705</cockpit-offset-x>
+            </dimensions>
+            <rendering>
+                <reflection-enabled type="int">1</reflection-enabled>
+                <reflection-type type="int">2</reflection-type>
+                <reflection-dynamic type="int">1</reflection-dynamic>
+                <reflection-correction type="float">0.3</reflection-correction>
+                <reflection-fresnel type="float">0.5</reflection-fresnel>
+                <reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
+                <reflection-rainbow type="float">0.1</reflection-rainbow>
+                <reflection-noise type="float">0.05</reflection-noise>
+                <ambient-correction type="float">0.15</ambient-correction>
+            </rendering>
+        </model>
 		
 			<sound>
 				<path>Aircraft/CRJ200/Sounds/CRJ200-sounds.xml</path>

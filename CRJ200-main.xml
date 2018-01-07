@@ -107,8 +107,8 @@
 			</door-positions>
 			<sound-enabled type="bool">false</sound-enabled>
 			<limits>
-				<mtow-rw-m>1610</mtow-rw-m>
-				<mlw-rw-m>1550</mlw-rw-m>
+				<mtow-rw-m>1918</mtow-rw-m>
+				<mlw-rw-m>1479</mlw-rw-m>
 			</limits>
 			<dimensions>
 				<nose-distance-m>16</nose-distance-m>
@@ -146,6 +146,10 @@
 			<property-rule n="101">
 				<name>Propery rules</name>
 				<path>Aircraft/CRJ200/Systems/CRJ200-ap-rules.xml</path>
+			</property-rule>
+			<property-rule n="102">
+				<name>Propery rules</name>
+				<path>Aircraft/CRJ200/Systems/CRJ700-fuel.xml</path>
 			</property-rule>
 			
 			<property-rule n="666">
